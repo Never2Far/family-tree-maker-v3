@@ -24,24 +24,27 @@ default: &default
 development:
   <<: *default
   database: family_tree_maker_backend_development
+  host: localhost
+  user: postgres
+  password: Q73DB*Aa
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: family_tree_maker_backend
+  username: postgres
 
   # The password associated with the postgres role (username).
-  #password:
+  password: Q73DB*Aa
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5434
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -58,7 +61,9 @@ development:
 test:
   <<: *default
   database: family_tree_maker_backend_test
-
+  host: localhost
+  user: postgres
+  password: Q73DB*Aa
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -71,7 +76,7 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   DATABASE_URL="postgres://myuser:mypass@127.0.0.1/somedatabase"
 #
 # You can use this database configuration with:
 #
