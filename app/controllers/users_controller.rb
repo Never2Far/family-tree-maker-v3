@@ -1,19 +1,23 @@
 class UsersController < ApplicationController
-    include AuthTokenConcern
+    # include AuthTokenConcern
+    # skip_before_action :verify_authenticity_token
   
     def create
+        # puts params.to_s
       user = User.create!(
         username: params['username'],
         password: params['password'],
         password_confirmation: params['password'],
-        auth_token: unique_auth_token
+        # auth_token: unique_auth_token
       )
   
       if user
-        session[:user_id] = user.id
-        render json: { user_id: user.id }
+        # session[:user_id] = user.id
+        render json: { user_id: user.id,
+                        success: true }
       else
-        render json: { result: 'Unable to create new user' }
+        render json: { error: 'Unable to create new user',
+        success: false }
       end
     end
 
