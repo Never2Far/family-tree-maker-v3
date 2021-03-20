@@ -19,7 +19,7 @@ class RelativesContainer extends Component {
 const mapStateToProps = ({relatives}) => ({relatives})
 
 const mapDispatchToProps = dispatch => ({
-  addRelative: relativeInfo => dispatch({type: 'ADD_RELATIVE', relativeInfo})
+  addRelative: payload => dispatch({type: 'ADD_RELATIVE', payload})
 //   ,deleteRestaurant: id => dispatch({type: 'DELETE_RESTAURANT', id})
 })
 
