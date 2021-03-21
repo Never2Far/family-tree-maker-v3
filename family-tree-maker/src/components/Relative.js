@@ -3,10 +3,10 @@ import React from 'react';
 // import ReviewsContainer from '../../containers/ReviewsContainer';
 
 // class Restaurant extends Component {
-  export const Relative = props => {
+ const Relative = props => {
     return (
         <div>
-          {`${props.firsName} ${props.lastName} - ${props.relationship}`}
+          {`${props.relative.firstName} ${props.relative.lastName} - ${props.relative.relationship}`}
           {/* <button onClick={this.handleOnClick}> X </button>
           <ReviewsContainer restaurantId={restaurant.id}/> */}
           </div>
@@ -14,7 +14,7 @@ import React from 'react';
 //   }
 };
 
-// export default Relative;
+export default Relative;
 
 
 
