@@ -1,13 +1,6 @@
 import cuid from 'cuid';
-import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({
-    relatives: manageRelatives,
-});
-
-export default rootReducer;
-
-function manageRelatives(state = [], action) {
+function manageRelatives(state = [], action)  {
 
 switch (action.type) {
     case 'ADD_RELATIVE':
@@ -28,6 +21,7 @@ switch (action.type) {
 }
 }
 
+export default manageRelatives
 // function manageReviews(state = [], action) {
 //     switch (action.type) {
 //         case 'ADD_REVIEW':
