@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+import cuid from 'cuid';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
@@ -13,7 +13,7 @@ switch (action.type) {
     case 'ADD_RELATIVE':
         
     const relative = {
-        id: uuid(),
+        id: cuid(),
         firstName: action.payload.firstName,
         lastName: action.payload.lastName,
         relationship: action.payload.relationship
