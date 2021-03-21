@@ -4,21 +4,20 @@ import Relative from './Relative';
 // import ReviewsContainer from '../../containers/ReviewsContainer';
 
 // class Restaurant extends Component {
-  export const RelativesList = props => {
+   const RelativesList = props => {
     return (
       <div>
         <ul className="relatives-list">
-          {props.map( relative =>
-                <li><Relative relative={relative}/></li>        )}
-          {/* <button onClick={this.handleOnClick}> X </button>
-          <ReviewsContainer restaurantId={restaurant.id}/> */}
+          {props.relatives.map( relative =>
+                <li key={relative.id}><Relative relative={relative} key={relative.id}/></li>        )}
+          
           </ul>
       </div>
     );
 //   }
 };
 
-// export default Relative;
+export default RelativesList;
 
 
 
@@ -29,3 +28,5 @@ import Relative from './Relative';
 
 //   render() {
 //     const { restaurant } = this.props;
+//* <button onClick={this.handleOnClick}> X </button>
+        //   <ReviewsContainer restaurantId={restaurant.id}/> */
