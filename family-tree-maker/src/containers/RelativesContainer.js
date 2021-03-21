@@ -9,7 +9,9 @@ class RelativesContainer extends Component {
     return (
       <div>
         <RelativeInput addRelative={this.props.addRelative}/>
+        <ul>
         <RelativesList relatives={this.props.relatives} />
+        </ul>
       </div>
     )
   }
@@ -17,6 +19,12 @@ class RelativesContainer extends Component {
 
 
 const mapStateToProps = ({relatives}) => ({relatives})
+
+// const mapStateToProps = state => {
+//   return {
+//     relatives: state.relatives
+//   }
+// }
 
 const mapDispatchToProps = dispatch => ({
   addRelative: payload => dispatch({type: 'ADD_RELATIVE', payload})
