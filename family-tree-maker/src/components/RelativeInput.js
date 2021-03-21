@@ -16,7 +16,11 @@ class RelativeInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRelative({payload: this.state})
+
+    const payload = this.state
+    console.log(payload)
+
+    this.props.addRelative(payload)
     this.setState({
         firstName: '',
         lastName: '',
