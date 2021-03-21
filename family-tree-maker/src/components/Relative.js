@@ -5,11 +5,11 @@ import React from 'react';
 // class Restaurant extends Component {
  const Relative = props => {
     return (
-        <div>
+        
+          <div>
           {`${props.relative.firstName} ${props.relative.lastName} - ${props.relative.relationship}`}
-          {/* <button onClick={this.handleOnClick}> X </button>
-          <ReviewsContainer restaurantId={restaurant.id}/> */}
           </div>
+          
     );
 //   }
 };

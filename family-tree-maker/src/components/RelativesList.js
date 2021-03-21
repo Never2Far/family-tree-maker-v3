@@ -4,18 +4,31 @@ import Relative from './Relative';
 // import ReviewsContainer from '../../containers/ReviewsContainer';
 
 // class Restaurant extends Component {
-   const RelativesList = props => {
+   const RelativesList = (props) => {
+   console.log(props)
+
+
     return (
-      <div>
-        <ul className="relatives-list">
-          {props.relatives.map( relative =>
-                <li key={relative.id}><Relative relative={relative} key={relative.id}/></li>        )}
-          
-          </ul>
-      </div>
-    );
-//   }
-};
+      
+      <ul>
+          {props.relatives && props.relatives.map( relative => 
+               <li key={relative.id}><Relative relative={relative} key={relative.id}/></li>)}
+      </ul>
+    )
+          }
+
+  //   else {
+  //     return (
+  //       <div>
+  //         <ul>
+
+  //         </ul>
+  //       </div>
+  //     )
+  //   }
+   
+  // }
+
 
 export default RelativesList;
 
