@@ -1,45 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Relative from './Relative';
-// import React, { Component } from 'react';
-// import ReviewsContainer from '../../containers/ReviewsContainer';
 
-// class Restaurant extends Component {
-   const RelativesList = (props) => {
-   console.log(props)
+class RelativesList extends Component {
+  //  const RelativesList = (props) => {
+  //  console.log(props)
 
 
+  handleOnClick
+    
+    render() {
     return (
       
       <ul>
-          {props.relatives && props.relatives.map( relative => 
-               <li key={relative.id}><Relative relative={relative} key={relative.relativeId}/></li>)}
+          {this.props.relatives && this.props.relatives.map( relative => 
+               <Relative relative={relative} key={relative.relativeId} relativeId={relative.relativeId} deleteRelative={this.props.deleteRelative}/>)}
       </ul>
-    )
+    )}
+
           }
-
-  //   else {
-  //     return (
-  //       <div>
-  //         <ul>
-
-  //         </ul>
-  //       </div>
-  //     )
-  //   }
-   
-  // }
-
-
+          
 export default RelativesList;
 
 
 
-//   handleOnClick = () => {
-//     this.props.deleteRestaurant(this.props.restaurant.id)
-//   }
+// import React, { Component } from 'react';
+// import Restaurant from './Restaurant';
+
+
+// class Restaurants extends Component {
+
 
 
 //   render() {
-//     const { restaurant } = this.props;
-//* <button onClick={this.handleOnClick}> X </button>
-        //   <ReviewsContainer restaurantId={restaurant.id}/> */
+//     return(
+//       <div>
+//         {this.props.restaurants.map(restaurant => 
+//           <Restaurant restaurant={restaurant} key={restaurant.id} deleteRestaurant={this.props.deleteRestaurant}/>
+//         )}
+//       </div>
+//     );
+//   }
+// };
+
+// export default Restaurants;
