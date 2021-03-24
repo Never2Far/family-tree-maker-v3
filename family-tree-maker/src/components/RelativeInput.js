@@ -5,7 +5,8 @@ class RelativeInput extends Component {
   state = {
     firstName: '',
     lastName: '',
-    relationship: ''
+    relationship: '',
+    userId: this.props.userId
   }
 
   handleOnChange = event => {
