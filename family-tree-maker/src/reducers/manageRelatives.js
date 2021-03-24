@@ -6,15 +6,20 @@ switch (action.type) {
     case 'ADD_RELATIVE':
         
     const relative = {
-        id: cuid(),
+        userId: action.payload.userId,
+        relativeId: cuid(),
         firstName: action.payload.firstName,
         lastName: action.payload.lastName,
         relationship: action.payload.relationship
     }
+
+    console.log(relative)
         return [...state, relative]
         // case 'DELETE_RESTAURANT':
 
         // return state.filter(restaurant => restaurant.id !== action.id)
+case 'SAVE_RELATIVES':
+
 
     default:
         return state
