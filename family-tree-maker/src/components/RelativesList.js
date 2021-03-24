@@ -12,7 +12,7 @@ import Relative from './Relative';
       
       <ul>
           {props.relatives && props.relatives.map( relative => 
-               <li key={relative.id}><Relative relative={relative} key={relative.id}/></li>)}
+               <li key={relative.id}><Relative relative={relative} key={relative.relativeId}/></li>)}
       </ul>
     )
           }
