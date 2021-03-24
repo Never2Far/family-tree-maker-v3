@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
 import manageRelatives from './manageRelatives'
-import manageRegistration from './manageRegistration'
+
 
 const rootReducer = combineReducers({
-    relatives: manageRelatives,
-    auth: manageRegistration
+    relatives: manageRelatives
 });
 
 export default rootReducer
