@@ -1,0 +1,2 @@
+class RelativesController < ApplicationController
+end

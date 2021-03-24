@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :relatives
   resources :users
   post 'resolve' => 'users#create'
   # post 'signup' => 'users#create'
