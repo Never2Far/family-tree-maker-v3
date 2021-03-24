@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RelativeInput from '../components/RelativeInput';
 import RelativesList from '../components/RelativesList';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class RelativesContainer extends Component {
 
   render() {
+    const { user } = this.props.auth0;
     return (
       <div>
-        <RelativeInput addRelative={this.props.addRelative}/>
+        <h2>Welcome, {user.name}!</h2>
+        <RelativeInput addRelative={this.props.addRelative} userId={user.sub}/>
         <ul>
         <RelativesList relatives={this.props.relatives} />
         </ul>
@@ -35,7 +38,7 @@ const mapDispatchToProps = dispatch => ({
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(RelativesContainer)
+export default withAuth0(connect(mapStateToProps, mapDispatchToProps)(RelativesContainer))
 
 
 // deleteRestaurant={this.props.deleteRestaurant}
