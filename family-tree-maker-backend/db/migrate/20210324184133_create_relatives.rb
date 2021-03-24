@@ -6,6 +6,7 @@ class CreateRelatives < ActiveRecord::Migration[6.0]
       t.string :relationship
       t.text :relativeId
       t.text :userId
+      t.integer :user_id
 
       t.timestamps
     end
