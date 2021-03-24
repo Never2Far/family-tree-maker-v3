@@ -10,10 +10,10 @@ class RelativesContainer extends Component {
     const { user } = this.props.auth0;
     return (
       <div>
-        <h2>Welcome, {user.name}!</h2>
-        <RelativeInput addRelative={this.props.addRelative} userId={user.sub}/>
+        <h1>{`${user.given_name}'s Family`}</h1>
+        <RelativeInput addRelative={this.props.addRelative}  userId={user.sub}/>
         <ul>
-        <RelativesList relatives={this.props.relatives} />
+        <RelativesList relatives={this.props.relatives} deleteRelative={this.props.deleteRelative}/>
         </ul>
       </div>
     )
@@ -23,22 +23,10 @@ class RelativesContainer extends Component {
 
 const mapStateToProps = ({relatives}) => ({relatives})
 
-// const mapStateToProps = state => {
-//   return {
-//     relatives: state.relatives
-//   }
-// }
-
 const mapDispatchToProps = dispatch => ({
-  addRelative: payload => dispatch({type: 'ADD_RELATIVE', payload})
+  addRelative: payload => dispatch({type: 'ADD_RELATIVE', payload}),
+  deleteRelative: payload => dispatch({type: 'DELETE_RELATIVE', payload})
 //   ,deleteRestaurant: id => dispatch({type: 'DELETE_RESTAURANT', id})
 })
 
-
-
-
-
 export default withAuth0(connect(mapStateToProps, mapDispatchToProps)(RelativesContainer))
-
-
-// deleteRestaurant={this.props.deleteRestaurant}
