@@ -8,10 +8,7 @@ import App from './App';
 import thunk from 'redux-thunk';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-// import reportWebVitals from './reportWebVitals';
 
-// const store = createStore(rootReducer,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
   const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -26,7 +23,6 @@ ReactDOM.render(
     redirectUri={window.location.origin}
     audience="https://near-net.us.auth0.com/api/v2/"
     scope="read:current_user update:current_user_metadata"
-    // onRedirectCallback={onRedirectCallback}
     >
   <Provider store={store}>
     <App />
@@ -35,8 +31,3 @@ ReactDOM.render(
  ,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();

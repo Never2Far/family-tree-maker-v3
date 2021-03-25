@@ -10,18 +10,18 @@ const NavBar = (props) => {
       >
         Home
       </NavLink>
-      <NavLink 
+      {/* <NavLink 
         style={{ marginRight: '10px' }} 
         to="/signup"
       >
         Sign Up
-        </NavLink>
-        <NavLink
+        </NavLink> */}
+        {/* <NavLink
         style={{ marginRight: '10px' }} 
         to="/login"
       >
         Login
-      </NavLink>
+      </NavLink> */}
 
       
       <NavLink
