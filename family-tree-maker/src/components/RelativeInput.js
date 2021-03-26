@@ -21,7 +21,7 @@ class RelativeInput extends Component {
     const payload = this.state
     console.log(payload)
 
-    this.props.addRelative(payload)
+    this.props.saveRelative(payload)
     this.setState({
         firstName: '',
         lastName: '',
