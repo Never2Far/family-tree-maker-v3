@@ -6,15 +6,20 @@ class RelativesList extends Component {
   //  console.log(props)
 
 
-  handleOnClick
+  // handleOnClick
+
+  componentDidMount() {
+    this.props.fetchRelatives(this.props.userId)
+  }
     
     render() {
     return (
-      
+      <div>
       <ul>
           {this.props.relatives && this.props.relatives.map( relative => 
-               <Relative relative={relative} key={relative.relativeId} relativeId={relative.relativeId} deleteRelative={this.props.deleteRelative}/>)}
+               <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={this.props.deleteRelative}/>)}
       </ul>
+      </div>
     )}
 
           }
