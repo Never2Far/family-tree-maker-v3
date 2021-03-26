@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :relatives
   resources :users
+
+  delete 'relatives' => 'relatives#delete'
+  post 'relatives' => 'relatives#create'
   post 'resolve' => 'users#create'
   # post 'signup' => 'users#create'
   post 'login' => 'users#show'
