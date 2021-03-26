@@ -5,7 +5,8 @@ class Relative extends Component {
 
 
 handleOnClick = () => {
-     const payload = {relativeId: this.props.relativeId}
+     const payload = {relativeId: this.props.relativeId,
+                        userId: this.props.userId}
       this.props.deleteRelative(payload)
 }
 
