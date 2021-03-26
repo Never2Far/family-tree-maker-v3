@@ -1,26 +1,39 @@
 import cuid from 'cuid';
+// import { saveRelative } from '../actions/saveRelative';
 
-function manageRelatives(state = [], action)  {
+function manageRelatives(state = {relatives: [],
+                                loading: false}, action)  {
 
 switch (action.type) {
+    case 'ADDING_RELATIVE':
+        console.log('Adding Relative to DB....')
+
+        return Object.assign({}, {relatives: [...state.relatives]}, {loading: true})
+
+    case 'DELETING_RELATIVE':
+        console.log('Removing Relative from DB....')
+
+        return Object.assign({}, {relatives: [...state.relatives]}, {loading: true})
+
+    case 'FETCHING_RELATIVES':
+        console.log('Fetching saved relatives from DB....')
+    
+        return Object.assign({}, {relatives: [...state.relatives]}, {loading: true})
+
     case 'ADD_RELATIVE':
         
-    const relative = {
-        userId: action.payload.userId,
-        relativeId: cuid(),
-        firstName: action.payload.firstName,
-        lastName: action.payload.lastName,
-        relationship: action.payload.relationship
-    }
+        const relative = action.payload
+        console.log(relative)
+        return Object.assign({}, {relatives: [...state.relatives, relative]}, {loading: false})
 
-    console.log(relative)
-        return [...state, relative]
+        // return Object.assign({}, ...state, [...state.relatives, relative] )
         // case 'DELETE_RESTAURANT':
 
         // return state.filter(restaurant => restaurant.id !== action.id)
-case 'DELETE_RELATIVE':
-    console.log(action.payload)
-    return state.filter(relative => relative.relativeId !== action.payload.relativeId)
+    case 'REMOVE_RELATIVE':
+    // const relative = action.payload
+
+        return Object.assign({}, {relatives: state.relatives.filter(relative => relative.relativeId !== action.payload.relativeId)}, {loading: false})
 
     default:
         return state
