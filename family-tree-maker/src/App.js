@@ -1,12 +1,13 @@
 import React from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
-// import './App.css';
+import './App.css';
 import RelativesContainer from './containers/RelativesContainer';
 import NavBar from './components/NavBar';
 import { Router,
 Route } from 'react-router-dom';
 import history from "./router/history";
 import { useAuth0 } from '@auth0/auth0-react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
