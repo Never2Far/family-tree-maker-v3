@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Relative from './Relative';
+import ListGroup from 'react-bootstrap/ListGroup'
 
 class RelativesList extends Component {
   //  const RelativesList = (props) => {
@@ -11,15 +12,21 @@ class RelativesList extends Component {
   componentDidMount() {
     this.props.fetchRelatives(this.props.userId)
   }
+
+  // componentWillUnmount() {
+
+  // }
     
     render() {
     return (
-      <div>
-      <ul>
+      
+      <ListGroup>
           {this.props.relatives && this.props.relatives.map( relative => 
-               <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={this.props.deleteRelative}/>)}
-      </ul>
-      </div>
+          <ListGroup.Item>
+          <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={this.props.deleteRelative}/>
+          </ListGroup.Item>)}
+      </ListGroup>
+      
     )}
 
           }
