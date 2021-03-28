@@ -41,7 +41,7 @@ class RelativesContainer extends Component {
         <RelativeInput addRelative={this.props.addRelative} saveRelative={this.props.saveRelative} userId={user.sub}/>
   
         <RelativesList relatives={this.props.relatives.relatives} deleteRelative={this.props.deleteRelative} fetchRelatives={this.props.fetchRelatives} userId={user.sub}/>
-        <GridContainer />
+        <GridContainer user={user} relatives={this.props.relatives.relatives}/>
         
        </Container>
     )
