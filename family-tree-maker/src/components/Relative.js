@@ -15,7 +15,7 @@ handleOnClick = () => {
 render() {
     return (
         
-          <li>
+          <li key={this.props.relativeId}>
           {`${this.props.relative.firstName} ${this.props.relative.lastName} - ${this.props.relative.relationship}`}
           <button onClick={this.handleOnClick}> X </button>
           </li>
