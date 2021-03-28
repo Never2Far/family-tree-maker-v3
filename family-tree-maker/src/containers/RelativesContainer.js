@@ -22,10 +22,10 @@ class RelativesContainer extends Component {
 // getDerivedStateFromProps() {
   
 // }
-componentDidMount() {
-  const { user } = this.props.auth0;
-  this.props.fetchRelatives(user.sub)
-}
+// componentDidMount() {
+//   const { user } = this.props.auth0;
+//   this.props.fetchRelatives(user.sub)
+// }
 // componentDidMount() {
 
 // 
