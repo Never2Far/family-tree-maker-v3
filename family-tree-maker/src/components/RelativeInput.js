@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+// import RelativeDropDown from './RelativeDropDown'
 
 class RelativeInput extends Component {
 
@@ -35,16 +36,26 @@ class RelativeInput extends Component {
     })
   }
 
+//    relativeDropDown = () => {
+
+//     return (
+//         this.props.relatives && this.props.relatives.map( relative => 
+//         <option>{`${relative.firstName} ${relative.lastName}`}</option>)
+//     )
+
+// } 
+
   render() {
     return (
       
       
         <Container>
+          <Jumbotron>
           <h3>Add New Relative</h3>
         <Form inline onSubmit={(event) => this.handleOnSubmit(event)}>
         
         <Form.Group controlId="formGroupFirstName">
-          <Form.Label>First Name:</Form.Label>
+          <Form.Label>First Name: </Form.Label>
           <Form.Control
           size="sm"
            type='text'
@@ -54,7 +65,7 @@ class RelativeInput extends Component {
         </Form.Group>
 
         <Form.Group controlId="formGroupLastName">
-        <Form.Label>Last Name:</Form.Label>
+        <Form.Label>Last Name: </Form.Label>
         <Form.Control 
         size="sm"
           type='text'
@@ -65,7 +76,7 @@ class RelativeInput extends Component {
         </Form.Group>
 
         <Form.Group controlId="formGroupRelationship">
-        <Form.Label>Relationship:</Form.Label>
+        <Form.Label>Relationship: </Form.Label>
         <Form.Control 
         as="select"
         size="sm"
@@ -74,7 +85,7 @@ class RelativeInput extends Component {
           onChange={(event) => this.handleOnChange(event)}
           value={this.state.relationship}
         >
-        <option hidden selected value>Select one...</option>
+        <option hidden value>Select one...</option>
         <option>Spouse</option>
         <option>Father</option>
         <option>Mother</option>
@@ -82,6 +93,7 @@ class RelativeInput extends Component {
         <option>Child</option>
         </Form.Control>
         </Form.Group>
+        
 
         <Button variant="primary" type='submit'>
           Submit
@@ -89,6 +101,7 @@ class RelativeInput extends Component {
         
      
       </Form>
+      </Jumbotron>
       </Container>
     );
   }
@@ -97,7 +110,7 @@ class RelativeInput extends Component {
 export default RelativeInput;
 
 
-/* <div>
+/* /* <div>
         <h2>Add New Relative</h2>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
         <label>First Name:</label>
@@ -124,3 +137,23 @@ export default RelativeInput;
         <input type='submit'/>
         </form>
       </div> */
+
+      // {this.props.relatives && this.props.relatives.map( relative => 
+      //   <option>
+      //   {`${relative.firstName} ${relative.lastName}`}
+      //   </option>)}
+
+     /* </Form.Group>
+        <Form.Group controlId="formGroupOf">
+          <Form.Label>Of: </Form.Label>
+          <Form.Control
+          as="select"
+          size="sm"
+            
+            name='of'
+            onChange={(event) => this.handleOnChange(event)}
+             />
+            <option selected value>Self</option>
+          <RelativeDropDown relatives={this.props.relatives} />
+      
+        </Form.Group> */
