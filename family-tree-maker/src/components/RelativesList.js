@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
+import { useSelector } from 'react-redux'
 import Relative from './Relative';
 import ListGroup from 'react-bootstrap/ListGroup'
 
-class RelativesList extends Component {
-  //  const RelativesList = (props) => {
+// class RelativesList extends Component {
+   const RelativesList = (props) => {
   //  console.log(props)
 
-
+      const relatives = useSelector(state => state.relatives.relatives)
   // handleOnClick
 
-  componentDidMount() {
-    this.props.fetchRelatives(this.props.userId)
-  }
+  // componentDidMount() {
+  //   this.props.fetchRelatives(this.props.userId)
+  // }
 
   // componentWillUnmount() {
 
   // }
     
-    render() {
+    // render() {
     return (
       
       <ListGroup>
-          {this.props.relatives && this.props.relatives.map( relative => 
-          <ListGroup.Item>
-          <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={this.props.deleteRelative}/>
+          { relatives.map( relative => 
+          <ListGroup.Item >
+          <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={props.deleteRelative}/>
           </ListGroup.Item>)}
       </ListGroup>
       
-    )}
+    )
+  // }
 
           }
           
