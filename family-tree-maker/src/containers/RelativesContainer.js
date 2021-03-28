@@ -6,6 +6,13 @@ import { withAuth0 } from '@auth0/auth0-react';
 import { saveRelative } from '../actions/saveRelative';
 import { deleteRelative } from '../actions/deleteRelative';
 import { fetchRelatives } from '../actions/fetchRelatives';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Toast from 'react-bootstrap/Toast';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import GridContainer from './GridContainer';
+
+
 // import {saveRelative} from '../actions/saveRelative';
 
 class RelativesContainer extends Component {
@@ -15,22 +22,28 @@ class RelativesContainer extends Component {
 // getDerivedStateFromProps() {
   
 // }
-
+componentDidMount() {
+  const { user } = this.props.auth0;
+  this.props.fetchRelatives(user.sub)
+}
 // componentDidMount() {
 
-// }
+// 
 
 
   render() {
     const { user } = this.props.auth0;
     return (
-      <div>
-        <h1>{`${user.given_name}'s Family`}</h1>
+      <Container className="relative-input" >
+        
+      
+        {/* <h1 className={'header'}>{`${user.given_name}'s Family`}</h1> */}
         <RelativeInput addRelative={this.props.addRelative} saveRelative={this.props.saveRelative} userId={user.sub}/>
-        <ul>
+  
         <RelativesList relatives={this.props.relatives.relatives} deleteRelative={this.props.deleteRelative} fetchRelatives={this.props.fetchRelatives} userId={user.sub}/>
-        </ul>
-      </div>
+        <GridContainer />
+        
+       </Container>
     )
   }
 }
