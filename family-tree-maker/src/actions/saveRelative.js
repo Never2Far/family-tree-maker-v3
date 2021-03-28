@@ -5,6 +5,7 @@ export function saveRelative(relativeObj) {
   const relative = {
     firstName: relativeObj.firstName,
     lastName: relativeObj.lastName,
+    fullName: relativeObj.fullName,
     relationship: relativeObj.relationship,
     userId: relativeObj.userId,
     relativeId: cuid()
