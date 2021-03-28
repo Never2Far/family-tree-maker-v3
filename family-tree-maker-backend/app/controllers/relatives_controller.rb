@@ -52,6 +52,7 @@ class RelativesController < ApplicationController
             firstName: params['firstName'],
             middleName: params['middleName'],
             lastName: params['lastName'],
+            fullName: `#{params['firstName']} #{params['lastName']}`,
             relationship: params['relationship'],
             relativeId: params['relativeId'],
             userId: user.userId,
