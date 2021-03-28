@@ -31,7 +31,7 @@ const NavBar = (props) => {
       Relatives
     </NavLink>
     <NavLink
-      style={{ marginRight: '10px' }} 
+      style={{ marginRight: '10px', float: 'right' }} 
       to="/logout"
     >
       Log Out
