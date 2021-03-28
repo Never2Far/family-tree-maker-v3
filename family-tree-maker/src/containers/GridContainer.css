@@ -5,25 +5,23 @@
     gap: 0px 0px;
     height: 300px;
     grid-template-areas:
-    /* ". . . . . . . . . . . . ."
-    ". . . . . . . . . . . . ."
-    ". . . . . . . . . . . . ." */
-    "grandfather-f grandfather-f t grandmother-f grandmother-f . . . grandmother-m grandmother-m t2 grandfather-m grandfather-m"
+    
+    "Father Father t Mother Mother . . . grandMother-m grandMother-m t2 grandFather-m grandFather-m"
     ". . c s c3 . . . c4 s2 c2 . ."
-    ". . . . user user t3 spouse spouse . . . ."
+    ". . . . user user t3 Spouse Spouse . . . ."
     ". . c5 c5 c5 t5 t4 t6 c6 c6 c6 . ."
     ". child1 child1 . child2 child2 . child3 child3 . child4 child4 .";
 }
   
-  .grandfather-f { grid-area: grandfather-f; border: solid black; }
+  .Father { grid-area: Father; border: solid black; }
   
-  .grandmother-f { grid-area: grandmother-f; border: solid black; }
+  .Mother { grid-area: Mother; border: solid black; }
   
-  .grandfather-m { grid-area: grandfather-m; border: solid black; }
+  .grandFather-m { grid-area: grandFather-m; border: solid black; }
   
-  .grandmother-m { grid-area: grandmother-m; border: solid black; }
+  .grandMother-m { grid-area: grandMother-m; border: solid black; }
   
-  .spouse { grid-area: spouse; border: solid black; }
+  .Spouse { grid-area: Spouse; border: solid black; }
   
   .user { grid-area: user; border: solid black; }
   

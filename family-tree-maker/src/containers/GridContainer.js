@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import './GridContainer.css'
+import TreeLeaf from '../components/TreeLeaf'
 
-class GridContainer extends Component {
+// class GridContainer extends Component {
+function GridContainer(props) {
+
+  const spouse = props.relatives.find(relative => relative.relationship === 'Spouse')
+  const father = props.relatives.find(relative => relative.relationship === 'Father')
+  const mother = props.relatives.find(relative => relative.relationship === 'Mother')
 
 
 
-render() {
+// render() {
 return (
 
 <Container>
 <div className="grid-container">
-  <div className="grandfather-f">Test</div>
-  <div className="grandmother-f">Test</div>
-  <div className="grandfather-m">Test</div>
-  <div className="grandmother-m">Test</div>
-  <div className="spouse">Test</div>
-  <div className="user">Test</div>
+<div className="user">{props.user.name}</div>
+  {props.relatives.map(relative => <TreeLeaf  relative={relative}/>)}
+  {/* <TreeLeaf className="father" relative={father}/> */}
+  {/* <div className="father">{father.firstName}</div>
+  <div className="mother">{mother.firstName}</div> */}
+  <div className="grandFather-m">Test</div>
+  <div className="grandMother-m">Test</div>
+  {/* <div className="spouse">{spouse.firstName}</div> */}
+  
+  
   <div className="child2">Test</div>
   <div className="child1">Test</div>
   <div className="child3">Test</div>
@@ -79,7 +89,7 @@ return (
 )
 }
 
-}
+// }
 
 
 export default GridContainer
