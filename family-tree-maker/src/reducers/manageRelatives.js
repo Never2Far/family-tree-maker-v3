@@ -24,7 +24,15 @@ switch (action.type) {
         
         const relative = action.payload
         console.log(relative)
+        if (!state.relatives.includes(relative)) {
+        // return state.relatives.filter(rel => rel.relativeId !== relative.relativeId)
         return Object.assign({}, {relatives: [...state.relatives, relative]}, {loading: false})
+        }
+            
+        else {
+            return state
+        }
+        
 
         // return Object.assign({}, ...state, [...state.relatives, relative] )
         // case 'DELETE_RESTAURANT':
