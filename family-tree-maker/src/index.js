@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 import thunk from 'redux-thunk';
 import { Auth0Provider } from '@auth0/auth0-react';
-
+import AuthContainer from './containers/AuthContainer'
 
 
   const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -25,7 +25,7 @@ ReactDOM.render(
     scope="read:current_user update:current_user_metadata"
     >
   <Provider store={store}>
-    <App />
+    <AuthContainer />
   </Provider>
   </Auth0Provider>
  ,
