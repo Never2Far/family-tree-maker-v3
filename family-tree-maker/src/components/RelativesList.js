@@ -23,7 +23,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
       
       <ListGroup>
           { relatives.map( relative => 
-          <ListGroup.Item >
+          <ListGroup.Item key={relative.relativeId}>
           <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={props.deleteRelative}/>
           </ListGroup.Item>)}
       </ListGroup>
