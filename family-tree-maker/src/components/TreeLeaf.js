@@ -5,7 +5,7 @@ function TreeLeaf(props) {
 console.log(props);
     return (
         <Link key={props.relative.relativeId} to={`/relatives/${props.relative.relativeId}`}>
-        <div className={props.relative.relationship}>{props.relative.fullName}</div></Link>
+        {props.relative.fullName}</Link>
     )
 
 }
