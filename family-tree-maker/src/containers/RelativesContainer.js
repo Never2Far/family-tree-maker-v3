@@ -11,6 +11,8 @@ import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import GridContainer from './GridContainer';
+import RelativeShow from '../components/RelativeShow';
+import { Route } from 'react-router-dom';
 
 
 // import {saveRelative} from '../actions/saveRelative';
@@ -36,13 +38,13 @@ class RelativesContainer extends Component {
     return (
       <Container className="relative-input" >
         
-      
+      {console.log(this.props)}
         {/* <h1 className={'header'}>{`${user.given_name}'s Family`}</h1> */}
         <RelativeInput addRelative={this.props.addRelative} saveRelative={this.props.saveRelative} userId={user.sub}/>
   
         <RelativesList relatives={this.props.relatives.relatives} deleteRelative={this.props.deleteRelative} fetchRelatives={this.props.fetchRelatives} userId={user.sub}/>
         <GridContainer user={user} relatives={this.props.relatives.relatives}/>
-        
+        <Route path={`${this.props.routerProps.match.url}/:relativeId`} render={routerProps => <RelativeShow routerProps={routerProps} relatives={this.props.relatives.relatives} />} />
        </Container>
     )
   }

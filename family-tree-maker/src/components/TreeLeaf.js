@@ -1,9 +1,11 @@
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function TreeLeaf(props) {
 console.log(props);
     return (
-        <div className={props.relative.relationship}>{props.relative.fullName}</div>
+        <Link key={props.relative.relativeId} to={`/relatives/${props.relative.relativeId}`}>
+        <div className={props.relative.relationship}>{props.relative.fullName}</div></Link>
     )
 
 }

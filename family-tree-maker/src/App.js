@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 // import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 import RelativesContainer from './containers/RelativesContainer';
@@ -52,14 +52,14 @@ useEffect(() => {
         <div>
           <NavBar />
           <Route exact path="/" render={() => <h2>Welcome, {props.user.name}!</h2>} />
-          <Route path='/relatives' render={() => <RelativesContainer />}/>
+          <Route path='/relatives' render={(routerProps) => <RelativesContainer routerProps={routerProps}/>}/>
           {/* <Route path='/signup' render={() => <AuthContainer  />}/> */}
           {/* <Route path='/login' render={() => <div>Log In</div>}/> */}
           <Route path='/logout' render={() => <button onClick={props.logout({ returnTo: window.location.origin })}>Log Out</button>} />
         </div>
       </Router>
       
-       
+
   );}
   // else {
   //   return <button onClick={loginWithRedirect}>Log in</button>;
