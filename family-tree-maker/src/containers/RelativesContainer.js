@@ -49,25 +49,31 @@ class RelativesContainer extends Component {
         <RelativeInput addRelative={this.props.addRelative} saveRelative={this.props.saveRelative} userId={user.sub}/>
   
         <RelativesList relatives={this.props.relatives.relatives} deleteRelative={this.props.deleteRelative} fetchRelatives={this.props.fetchRelatives} userId={user.sub}/>
-        <GridContainer user={user} relatives={this.props.relatives.relatives} matchUrl={this.props.match.url}/>
+        <GridContainer user={user} relatives={this.props.relatives.relatives} pathname={this.props.location.pathname} matchUrl={this.props.match.url}/>
         <Route
           path={`${this.props.match.url}/:relativeId`}
-          render={() => {
+          render={() => {console.log(this.props);
+            const relativeId = this.props.location.pathname.substring(11)
+           const relative = this.props.relatives.relatives.find(relative => relative.relativeId === relativeId)
             return (
             <Modal
-              onClick={() => {
-                this.props.history.push(this.props.match.url)
-              }}
+              // onClick={() => {
+              //   this.props.history.push(this.props.match.url)
+              // }}
               >
                 <div 
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  height: "100%",
+                  height: "80%",
                 }}
                 >
-                  Details Modal!
+                  <RelativeShow relative={relative} pathname={this.props.location.pathname} matchUrl={this.props.matchUrl}/>
+                  <Button onClick={() => {this.props.history.push(`${this.props.location.pathname}/edit`)}}>Edit</Button>
+                  <Button onClick={() => {
+                this.props.history.push(this.props.match.url)
+              }}>Close</Button>
                 </div>
 
               </Modal>

@@ -18,7 +18,7 @@ return (
 <Container>
 <div className="grid-container">
 <div className="user">{props.user.name}</div>
-  {props.relatives.map(relative => <div className={relative.relationship}><TreeLeaf matchUrl={props.matchUrl}key={relative.relativeId} relative={relative}/></div>)}
+  {props.relatives.map(relative => <div className={relative.relationship}><TreeLeaf pathname={props.pathname} matchUrl={props.matchUrl} key={relative.relativeId} relative={relative}/></div>)}
   {/* <TreeLeaf className="father" relative={father}/> */}
   {/* <div className="father">{father.firstName}</div>
   <div className="mother">{mother.firstName}</div> */}
