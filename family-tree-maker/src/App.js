@@ -50,7 +50,7 @@ useEffect(() => {
 
   return (
    <BrowserRouter>
-      // <Router history={history}>
+       {/* <Router history={history}> */}
         <div>
           <NavBar />
           <Switch>
@@ -71,7 +71,7 @@ useEffect(() => {
         <Route path='/logout' render={() => <button onClick={props.logout({ returnTo: window.location.origin })}>Log Out</button>} />
         </Switch>
         </div>
-      // </Router> 
+       {/* </Router>  */}
       </BrowserRouter>
       
 
