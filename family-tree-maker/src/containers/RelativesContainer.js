@@ -13,6 +13,7 @@ import Button from 'react-bootstrap/Button';
 import GridContainer from './GridContainer';
 import RelativeShow from '../components/RelativeShow';
 import { Route } from 'react-router-dom';
+import Modal from '../components/Modal';
 
 
 // import {saveRelative} from '../actions/saveRelative';
@@ -20,7 +21,12 @@ import { Route } from 'react-router-dom';
 class RelativesContainer extends Component {
 
 
+// state = {modalShow: false}
 
+// setModalShow(tf) {
+  
+//   this.setState({modalShow: tf})
+// }
 // getDerivedStateFromProps() {
   
 // }
@@ -43,8 +49,38 @@ class RelativesContainer extends Component {
         <RelativeInput addRelative={this.props.addRelative} saveRelative={this.props.saveRelative} userId={user.sub}/>
   
         <RelativesList relatives={this.props.relatives.relatives} deleteRelative={this.props.deleteRelative} fetchRelatives={this.props.fetchRelatives} userId={user.sub}/>
-        <GridContainer user={user} relatives={this.props.relatives.relatives}/>
-        <Route path={`${this.props.routerProps.match.url}/:relativeId`} render={routerProps => <RelativeShow routerProps={routerProps} relatives={this.props.relatives.relatives} />} />
+        <GridContainer user={user} relatives={this.props.relatives.relatives} matchUrl={this.props.match.url}/>
+        <Route
+          path={`${this.props.match.url}/:relativeId`}
+          render={() => {
+            return (
+            <Modal
+              onClick={() => {
+                this.props.history.push(this.props.match.url)
+              }}
+              >
+                <div 
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100%",
+                }}
+                >
+                  Details Modal!
+                </div>
+
+              </Modal>
+            )
+          }}
+          />
+        {/* <Route path={`${this.props.routerProps.match.url}/:relativeId`} render={routerProps => 
+        
+        
+        <RelativeShow 
+        // show={this.state.modalShow}
+        // onHide={this.setModalShow(false)}
+        routerProps={routerProps} relatives={this.props.relatives.relatives} />} /> */}
        </Container>
     )
   }
