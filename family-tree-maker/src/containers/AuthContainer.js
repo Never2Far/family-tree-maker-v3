@@ -3,9 +3,7 @@ import { useDispatch } from 'react-redux'
 import App from '../App'
 import { useAuth0 } from '@auth0/auth0-react';
 
-
-
-function AuthContainer() {
+const AuthContainer = () => {
 
 
 
@@ -29,7 +27,7 @@ function AuthContainer() {
 
 
 return (
-<App user={user} userId={user.sub} logout={logout}/>
+<App />
 )
   }
   else {
