@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
+import {useDispatch} from 'react-redux'
+import ListGroup from 'react-bootstrap/ListGroup'
+import {deleteRelative} from '../actions/deleteRelative'
+import {useAuth0} from '@auth0/auth0-react'
 
-class Relative extends Component {
+
+// class Relative extends Component {
+const Relative = (props) => {
+      const dispatch = useDispatch()
 //  const Relative = props => {
+const {user} = useAuth0();
 
-
-handleOnClick = () => {
-     const payload = {relativeId: this.props.relativeId,
-                        userId: this.props.userId}
-      this.props.deleteRelative(payload)
+const handleOnClick = () => {
+     const payload = {relativeId: props.relative.relativeId,
+                        userId: user.sub}
+      dispatch(deleteRelative(payload))
 }
 
 
 
-render() {
+// render() {
     return (
         
-          <li>
-          {`${this.props.relative.firstName} ${this.props.relative.lastName} - ${this.props.relative.relationship}`}
-          <button onClick={this.handleOnClick}> X </button>
-          </li>
+          <ListGroup.Item key={props.relative.relativeId}>
+          {`${props.relative.firstName} ${props.relative.lastName} - ${props.relative.relationship}`}
+          <button onClick={handleOnClick}> X </button>
+          </ListGroup.Item>
           
-    )}
+    )
+// }
 
 };
 
