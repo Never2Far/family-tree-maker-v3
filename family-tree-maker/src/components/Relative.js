@@ -29,7 +29,7 @@ const handleOnClick = () => {
                   to={`/relatives/${props.relative.relativeId}`}
                   >
                         {`${props.relative.fullName}`}
-                  </Link> - {`${props.relative.relationship}`}
+                  </Link> - {`${props.relative.relationship} `}
           <Button 
           variant='danger' 
           onClick={handleOnClick}
