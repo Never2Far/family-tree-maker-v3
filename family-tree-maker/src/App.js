@@ -10,10 +10,10 @@ import {
   useParams
 } from "react-router-dom";
 import NavBar from './components/NavBar';
-import Dashboard from './containers/Dashboard'
-import ProfilePage from './containers/ProfilePage'
-import FamilyPage from './containers/FamilyPage'
-import TreePage from './containers/TreePage'
+import Dashboard from './containers/dashboard/Dashboard'
+import ProfilePage from './containers/profile-page/ProfilePage'
+import FamilyPage from './containers/family-page/FamilyPage'
+import TreePage from './containers/tree-page/TreePage'
 
 import RelativesContainer from './containers/RelativesContainer';
 
