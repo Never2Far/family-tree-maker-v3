@@ -26,18 +26,3 @@ export function deleteRelative(relativeObj) {
     });
   }
 }
-
-//   fetch("http://localhost:3001/auth", {
-//             method: "POST",
-//             headers: {         
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json"
-//             },
-//             body: JSON.stringify(credentials)
-//         })
-//         .then(response => response.json())
-//         .then(result => {
-//             console.log(result);
-//             return result
-           
-//         });

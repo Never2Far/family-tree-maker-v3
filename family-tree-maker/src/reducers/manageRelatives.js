@@ -1,6 +1,3 @@
-// import cuid from 'cuid';
-// import { saveRelative } from '../actions/saveRelative';
-
 function manageRelatives(state = {relatives: [],
                                 loading: false}, action)  {
 
@@ -25,7 +22,7 @@ switch (action.type) {
         const relative = action.payload
         console.log(relative)
         if (!state.relatives.includes(relative)) {
-        // return state.relatives.filter(rel => rel.relativeId !== relative.relativeId)
+        
         return Object.assign({}, {relatives: [...state.relatives, relative]}, {loading: false})
         }
             
@@ -33,13 +30,7 @@ switch (action.type) {
             return state
         }
         
-
-        // return Object.assign({}, ...state, [...state.relatives, relative] )
-        // case 'DELETE_RESTAURANT':
-
-        // return state.filter(restaurant => restaurant.id !== action.id)
     case 'REMOVE_RELATIVE':
-    // const relative = action.payload
 
         return Object.assign({}, {relatives: state.relatives.filter(relative => relative.relativeId !== action.payload.relativeId)}, {loading: false})
 

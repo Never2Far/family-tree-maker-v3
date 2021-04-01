@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = (props) => {
+const NavBar = () => {
   return (
     <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
       <NavLink 
@@ -16,12 +16,6 @@ const NavBar = (props) => {
       >
         Profile
       </NavLink>
-        {/* <NavLink
-        style={{ marginRight: '10px' }} 
-        to="/login"
-      >
-        Login
-      </NavLink> */}
 
       
       <NavLink

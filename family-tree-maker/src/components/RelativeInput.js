@@ -1,16 +1,14 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import {useDispatch} from 'react-redux'
 import {useAuth0} from '@auth0/auth0-react'
-// import FormGroup from 'react-bootstrap/esm/FormGroup';
-// import FormLabel from 'react-bootstrap/esm/FormLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import {saveRelative} from '../actions/saveRelative'
-// import RelativeDropDown from './RelativeDropDown'
 
-// class RelativeInput extends Component {
+
+
   const RelativeInput = () => {
     const dispatch = useDispatch()
     const {user} = useAuth0();
@@ -19,26 +17,11 @@ import {saveRelative} from '../actions/saveRelative'
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [relationship, setRelationship] = useState('')
-    // const [userId, setUserId] = useState(user.sub)
-
-
-  // state = {
-  //   firstName: '',
-  //   lastName: '',
-  //   relationship: '',
-  //   userId: props.userId
-  // }
-
-  // handleOnChange = event => {
-  //   this.setState({
-  //   [event.target.name]: event.target.value
-  //   })
-  // }
+  
 
  const handleOnSubmit = event => {
     event.preventDefault();
 
-    // const payload = Object.assign({}, this.state, {fullName: `${this.state.firstName} ${this.state.lastName}`})
 const payload = {
   firstName: firstName,
   lastName: lastName,
@@ -50,31 +33,12 @@ const payload = {
 
     dispatch(saveRelative(payload))
 
-
     setFirstName('')
     setLastName('')
     setRelationship('')
-
-
-
-
-    // this.setState({
-    //     firstName: '',
-    //     lastName: '',
-    //     relationship: ''
-    // })
   }
 
-//    relativeDropDown = () => {
 
-//     return (
-//         this.props.relatives && this.props.relatives.map( relative => 
-//         <option>{`${relative.firstName} ${relative.lastName}`}</option>)
-//     )
-
-// } 
-
-  // render() {
     return (
       
       
@@ -133,56 +97,7 @@ const payload = {
       </Jumbotron>
       </Container>
     );
-  // }
+  
 };
 
 export default RelativeInput;
-
-
-/* /* <div>
-        <h2>Add New Relative</h2>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <label>First Name:</label>
-        <input 
-          type='text'
-          name='firstName'
-          onChange={(event) => this.handleOnChange(event)}
-          value={this.state.firstName}
-        />
-        <label>Last Name</label>
-        <input 
-          type='text'
-          name='lastName'
-          onChange={(event) => this.handleOnChange(event)}
-          value={this.state.lastName}
-        />
-        <label>Relationship</label>
-        <input 
-          type='text'
-          name='relationship'
-          onChange={(event) => this.handleOnChange(event)}
-          value={this.state.relationship}
-        />
-        <input type='submit'/>
-        </form>
-      </div> */
-
-      // {this.props.relatives && this.props.relatives.map( relative => 
-      //   <option>
-      //   {`${relative.firstName} ${relative.lastName}`}
-      //   </option>)}
-
-     /* </Form.Group>
-        <Form.Group controlId="formGroupOf">
-          <Form.Label>Of: </Form.Label>
-          <Form.Control
-          as="select"
-          size="sm"
-            
-            name='of'
-            onChange={(event) => this.handleOnChange(event)}
-             />
-            <option selected value>Self</option>
-          <RelativeDropDown relatives={this.props.relatives} />
-      
-        </Form.Group> */
