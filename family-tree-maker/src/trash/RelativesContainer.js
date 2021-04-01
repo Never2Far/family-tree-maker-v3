@@ -10,7 +10,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import GridContainer from './GridContainer';
+import GridContainer from '../containers/tree-page/GridContainer';
 import RelativeShow from '../components/RelativeShow';
 import { Route, Redirect } from 'react-router-dom';
 import RelativeModal from '../components/RelativeModal';

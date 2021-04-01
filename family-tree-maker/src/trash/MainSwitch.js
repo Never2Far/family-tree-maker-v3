@@ -9,7 +9,7 @@ import {
     useParams
   } from "react-router-dom";
   import { useAuth0 } from '@auth0/auth0-react';
-  import RelativesContainer from '../containers/RelativesContainer';
+  import RelativesContainer from './RelativesContainer';
   import RelativeShow from '../components/RelativeShow'
 //   import Modal from 'react-bootstrap/Modal'
 import RelativeModal from '../components/RelativeModal';
