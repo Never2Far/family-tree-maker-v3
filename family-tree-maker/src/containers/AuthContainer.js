@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import App from '../App'
 import { useAuth0 } from '@auth0/auth0-react';
+import {fetchRelatives} from '../actions/fetchRelatives'
 
 const AuthContainer = () => {
-
-
+  const dispatch = useDispatch();
 
     const {
         isLoading,
@@ -24,6 +24,8 @@ const AuthContainer = () => {
     return <div>Oops... {error.message}</div>;
   }
   if (isAuthenticated) {
+
+    dispatch(fetchRelatives(user.sub))
 
 
 return (
