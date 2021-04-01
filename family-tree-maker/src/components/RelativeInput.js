@@ -1,39 +1,66 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import {useDispatch} from 'react-redux'
+import {useAuth0} from '@auth0/auth0-react'
 // import FormGroup from 'react-bootstrap/esm/FormGroup';
 // import FormLabel from 'react-bootstrap/esm/FormLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import {saveRelative} from '../actions/saveRelative'
 // import RelativeDropDown from './RelativeDropDown'
 
-class RelativeInput extends Component {
+// class RelativeInput extends Component {
+  const RelativeInput = () => {
+    const {user} = useAuth0();
+    const userId = user.sub
 
-  state = {
-    firstName: '',
-    lastName: '',
-    relationship: '',
-    userId: this.props.userId
-  }
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [relationship, setRelationship] = useState('')
+    // const [userId, setUserId] = useState(user.sub)
 
-  handleOnChange = event => {
-    this.setState({
-    [event.target.name]: event.target.value
-    })
-  }
 
-  handleOnSubmit = event => {
+  // state = {
+  //   firstName: '',
+  //   lastName: '',
+  //   relationship: '',
+  //   userId: props.userId
+  // }
+
+  // handleOnChange = event => {
+  //   this.setState({
+  //   [event.target.name]: event.target.value
+  //   })
+  // }
+
+ const handleOnSubmit = event => {
     event.preventDefault();
 
-    const payload = Object.assign({}, this.state, {fullName: `${this.state.firstName} ${this.state.lastName}`})
+    // const payload = Object.assign({}, this.state, {fullName: `${this.state.firstName} ${this.state.lastName}`})
+const payload = {
+  firstName: firstName,
+  lastName: lastName,
+  relationship: relationship,
+  userId: userId
+}
     console.log(payload)
 
-    this.props.saveRelative(payload)
-    this.setState({
-        firstName: '',
-        lastName: '',
-        relationship: ''
-    })
+    saveRelative(payload)
+
+
+    setFirstName('')
+    setLastName('')
+    setRelationship('')
+
+
+
+
+    // this.setState({
+    //     firstName: '',
+    //     lastName: '',
+    //     relationship: ''
+    // })
   }
 
 //    relativeDropDown = () => {
@@ -45,14 +72,14 @@ class RelativeInput extends Component {
 
 // } 
 
-  render() {
+  // render() {
     return (
       
       
         <Container>
           <Jumbotron>
           <h3>Add New Relative</h3>
-        <Form inline onSubmit={(event) => this.handleOnSubmit(event)}>
+        <Form inline onSubmit={(event) => handleOnSubmit(event)}>
         
         <Form.Group controlId="formGroupFirstName">
           <Form.Label>First Name: </Form.Label>
@@ -60,8 +87,8 @@ class RelativeInput extends Component {
           size="sm"
            type='text'
            name='firstName'
-           onChange={(event) => this.handleOnChange(event)}
-           value={this.state.firstName}/>
+           onChange={(event) => setFirstName(event.target.value)}
+           value={firstName}/>
         </Form.Group>
 
         <Form.Group controlId="formGroupLastName">
@@ -70,8 +97,8 @@ class RelativeInput extends Component {
         size="sm"
           type='text'
           name='lastName'
-          onChange={(event) => this.handleOnChange(event)}
-          value={this.state.lastName}
+          onChange={(event) => setLastName(event.target.value)}
+          value={lastName}
         />
         </Form.Group>
 
@@ -82,8 +109,8 @@ class RelativeInput extends Component {
         size="sm"
           
           name='relationship'
-          onChange={(event) => this.handleOnChange(event)}
-          value={this.state.relationship}
+          onChange={(event) => setRelationship(event.target.value)}
+          value={relationship}
         >
         <option hidden value>Select one...</option>
         <option>Spouse</option>
@@ -104,7 +131,7 @@ class RelativeInput extends Component {
       </Jumbotron>
       </Container>
     );
-  }
+  // }
 };
 
 export default RelativeInput;
