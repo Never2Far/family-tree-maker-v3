@@ -50,12 +50,21 @@ class RelativesController < ApplicationController
 
         
 
-        relative = Relative.create!(
+        relative = Relative.create(
             firstName: params['firstName'],
             middleName: params['middleName'],
             lastName: params['lastName'],
             fullName: params['fullName'],
+            nickname: params['nickname'],
+            altName: params['altName'],
+            notes: params['notes'],
             relationship: params['relationship'],
+            age: params['age'],
+            birthplace: params['birthplace'],
+            address: params['address'],
+            phone: params['phone'],
+            email: params['email'],
+            birthdate: params['birthdate'],
             relativeId: params['relativeId'],
             userId: user.userId,
             user_id: user.id
