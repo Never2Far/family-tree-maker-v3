@@ -10,7 +10,10 @@ import {
   useParams
 } from "react-router-dom";
 import NavBar from './components/NavBar';
+import Dashboard from './containers/Dashboard'
 import ProfilePage from './containers/ProfilePage'
+import FamilyPage from './containers/FamilyPage'
+import TreePage from './containers/TreePage'
 
 import RelativesContainer from './containers/RelativesContainer';
 
@@ -33,7 +36,9 @@ const App = () => {
        <Router >
           <NavBar />
           <Switch>
-            <Route exact path="/" render={() => <h2>Welcome, {user.name}!</h2>} />
+            <Route exact path="/">
+              <Dashboard />
+            </Route>
 
             <Route path='/profile'>
               <ProfilePage />
@@ -41,7 +46,13 @@ const App = () => {
 
             <Route path='/relatives/:relativeId' children={<RelativeShow />} />
 
-            <Route path='/relatives' children={<RelativesContainer />}/>
+            <Route path='/relatives'>
+              <FamilyPage />
+            </Route>
+
+            <Route path='/tree'>
+              <TreePage />
+            </Route>
 
             <Route path='/logout' render={() => <button onClick={logout({ returnTo: window.location.origin })}>Log Out</button>} />
           </Switch>

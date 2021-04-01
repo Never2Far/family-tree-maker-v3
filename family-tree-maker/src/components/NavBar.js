@@ -14,7 +14,7 @@ const NavBar = (props) => {
         style={{ marginRight: '10px' }} 
         to="/profile"
       >
-        About Me
+        Profile
       </NavLink>
         {/* <NavLink
         style={{ marginRight: '10px' }} 
@@ -30,6 +30,14 @@ const NavBar = (props) => {
     >
       My Family
     </NavLink>
+
+    <NavLink
+      style={{ marginRight: '10px' }} 
+      to="/tree"
+    >
+      Tree
+    </NavLink>
+
     <NavLink
       style={{ marginRight: '10px', float: 'right' }} 
       to="/logout"
