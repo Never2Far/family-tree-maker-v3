@@ -12,6 +12,7 @@ import {saveRelative} from '../actions/saveRelative'
 
 // class RelativeInput extends Component {
   const RelativeInput = () => {
+    const dispatch = useDispatch()
     const {user} = useAuth0();
     const userId = user.sub
 
@@ -46,7 +47,7 @@ const payload = {
 }
     console.log(payload)
 
-    saveRelative(payload)
+    dispatch(saveRelative(payload))
 
 
     setFirstName('')
