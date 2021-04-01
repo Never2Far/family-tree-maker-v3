@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import './GridContainer.css'
-import TreeLeaf from '../components/TreeLeaf'
+import TreeLeaf from '../../components/TreeLeaf'
 import {useSelector} from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react';
 
