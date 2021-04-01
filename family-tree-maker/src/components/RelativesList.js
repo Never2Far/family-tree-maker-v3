@@ -21,7 +21,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
     // render() {
     return (
       
-      <ListGroup>
+      <ListGroup variant='flush'>
            {relatives.map( relative => 
           
           <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={props.deleteRelative}/>
