@@ -4,6 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import {deleteRelative} from '../actions/deleteRelative'
 import {useAuth0} from '@auth0/auth0-react'
+import {Link} from 'react-router-dom'
 
 
 
@@ -24,7 +25,11 @@ const handleOnClick = () => {
     return (
         
           <ListGroup.Item key={props.relative.relativeId}>
-          {`${props.relative.firstName} ${props.relative.lastName} - ${props.relative.relationship} `}
+                <Link
+                  to={`/relatives/${props.relative.relativeId}`}
+                  >
+                        {`${props.relative.fullName}`}
+                  </Link> - {`${props.relative.relationship}`}
           <Button 
           variant='danger' 
           onClick={handleOnClick}
@@ -37,3 +42,5 @@ const handleOnClick = () => {
 };
 
 export default Relative;
+
+{/* ` - ${props.relative.relationship}` */}
