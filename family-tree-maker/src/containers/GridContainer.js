@@ -2,23 +2,25 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import './GridContainer.css'
 import TreeLeaf from '../components/TreeLeaf'
+import {useSelector} from 'react-redux'
+import { useAuth0 } from '@auth0/auth0-react';
 
 // class GridContainer extends Component {
 function GridContainer(props) {
+  const relatives = useSelector(state => state.relatives.relatives)
+  // const spouse = props.relatives.find(relative => relative.relationship === 'Spouse')
+  // const father = props.relatives.find(relative => relative.relationship === 'Father')
+  // const mother = props.relatives.find(relative => relative.relationship === 'Mother')
 
-  const spouse = props.relatives.find(relative => relative.relationship === 'Spouse')
-  const father = props.relatives.find(relative => relative.relationship === 'Father')
-  const mother = props.relatives.find(relative => relative.relationship === 'Mother')
-
-
+  const {user} = useAuth0();
 
 // render() {
 return (
 
 <Container>
 <div className="grid-container">
-<div className="user">{props.user.name}</div>
-  {props.relatives.map(relative => <div className={relative.relationship}><TreeLeaf pathname={props.pathname} matchUrl={props.matchUrl} key={relative.relativeId} relative={relative}/></div>)}
+<div className="user">{user.name}</div>
+  {relatives.map(relative => <div className={relative.relationship}><TreeLeaf relative={relative}/></div>)}
   {/* <TreeLeaf className="father" relative={father}/> */}
   {/* <div className="father">{father.firstName}</div>
   <div className="mother">{mother.firstName}</div> */}
@@ -93,3 +95,5 @@ return (
 
 
 export default GridContainer
+
+//* <TreeLeaf pathname={props.pathname} matchUrl={props.matchUrl} key={relative.relativeId} relative={relative}/> */}

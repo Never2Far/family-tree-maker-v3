@@ -12,8 +12,8 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import GridContainer from './GridContainer';
 import RelativeShow from '../components/RelativeShow';
-import { Route } from 'react-router-dom';
-import Modal from '../components/Modal';
+import { Route, Redirect } from 'react-router-dom';
+import RelativeModal from '../components/RelativeModal';
 
 
 // import {saveRelative} from '../actions/saveRelative';
@@ -49,8 +49,9 @@ class RelativesContainer extends Component {
         <RelativeInput addRelative={this.props.addRelative} saveRelative={this.props.saveRelative} userId={user.sub}/>
   
         <RelativesList relatives={this.props.relatives.relatives} deleteRelative={this.props.deleteRelative} fetchRelatives={this.props.fetchRelatives} userId={user.sub}/>
-        <GridContainer user={user} relatives={this.props.relatives.relatives} pathname={this.props.location.pathname} matchUrl={this.props.match.url}/>
-        <Route
+        {/* <GridContainer user={user} relatives={this.props.relatives.relatives} pathname={this.props.location.pathname} matchUrl={this.props.match.url}/> */}
+        <GridContainer />
+        {/* <Route
           path={`${this.props.match.url}/:relativeId`}
           render={() => {console.log(this.props);
             const relativeId = this.props.location.pathname.substring(11)
@@ -69,9 +70,11 @@ class RelativesContainer extends Component {
                   height: "80%",
                 }}
                 >
-                  <RelativeShow relative={relative} pathname={this.props.location.pathname} matchUrl={this.props.matchUrl}/>
-                  <Button onClick={() => {this.props.history.push(`${this.props.location.pathname}/edit`)}}>Edit</Button>
-                  <Button onClick={() => {
+                  <RelativeShow relativesState={this.props.location.state} relative={relative} pathname={this.props.location.pathname} matchUrl={this.props.matchUrl}/>
+                  <Button onClick={() => {this.props.history.push(`${this.props.location.pathname}/edit`, this.props.relatives.relatives)}}>Edit</Button>
+                  {/* <Button onClick={() => <Redirect to={`${this.props.location.pathname}/edit`} />}>Edit</Button> */}
+
+                  {/* <Button onClick={() => {
                 this.props.history.push(this.props.match.url)
               }}>Close</Button>
                 </div>
@@ -80,7 +83,7 @@ class RelativesContainer extends Component {
             )
           }}
           />
-        {/* <Route path={`${this.props.routerProps.match.url}/:relativeId`} render={routerProps => 
+        /* <Route path={`${this.props.routerProps.match.url}/:relativeId`} render={routerProps => 
         
         
         <RelativeShow 
@@ -100,7 +103,7 @@ const mapDispatchToProps = dispatch => ({
   saveRelative: payload => dispatch(saveRelative(payload)),
   addRelative: payload => dispatch({type: 'ADD_RELATIVE', payload}),
   deleteRelative: payload => dispatch(deleteRelative(payload)),
-  removeRelative: payload => dispatch({type: 'ADD_RELATIVE', payload})
+  removeRelative: payload => dispatch({type: 'REMOVE_RELATIVE', payload})
 //   ,deleteRestaurant: id => dispatch({type: 'DELETE_RESTAURANT', id})
 })
 

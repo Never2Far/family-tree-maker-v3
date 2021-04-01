@@ -1,4 +1,4 @@
-import cuid from 'cuid';
+// import cuid from 'cuid';
 // import { saveRelative } from '../actions/saveRelative';
 
 function manageRelatives(state = {relatives: [],
