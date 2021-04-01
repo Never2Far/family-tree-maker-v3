@@ -42,6 +42,7 @@ import {saveRelative} from '../actions/saveRelative'
 const payload = {
   firstName: firstName,
   lastName: lastName,
+  fullName: `${firstName} ${lastName}`,
   relationship: relationship,
   userId: userId
 }
