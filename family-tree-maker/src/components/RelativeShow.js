@@ -9,8 +9,8 @@ import Form from 'react-bootstrap/Form'
 const RelativeShow = props => {
     const relatives = useSelector(state => state.relatives.relatives)
     const {relativeId} = useParams();
-    const relative = props.relative
-    // relatives.find(relative => relative.relativeId === relativeId)
+    // const relative = props.relative
+    const relative = relatives.find(relative => relative.relativeId === relativeId)
 
     if (!relative) return <div>Relative Not Found</div>
 
