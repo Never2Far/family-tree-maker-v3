@@ -42,5 +42,3 @@ const handleOnClick = () => {
 };
 
 export default Relative;
-
-{/* ` - ${props.relative.relationship}` */}
