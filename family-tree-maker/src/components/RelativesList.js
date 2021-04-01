@@ -22,10 +22,10 @@ import ListGroup from 'react-bootstrap/ListGroup'
     return (
       
       <ListGroup>
-          { relatives.map( relative => 
-          <ListGroup.Item key={relative.relativeId}>
+           {relatives.map( relative => 
+          
           <Relative relative={relative} key={relative.relativeId} userId={relative.userId} relativeId={relative.relativeId} deleteRelative={props.deleteRelative}/>
-          </ListGroup.Item>)}
+           )}
       </ListGroup>
       
     )
