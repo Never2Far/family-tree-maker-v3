@@ -7,7 +7,8 @@ import {
   Link,
   useHistory,
   useLocation,
-  useParams
+  useParams,
+  Redirect
 } from "react-router-dom";
 import NavBar from './components/NavBar';
 import Dashboard from './containers/dashboard/Dashboard'
@@ -15,7 +16,7 @@ import ProfilePage from './containers/profile-page/ProfilePage'
 import FamilyPage from './containers/family-page/FamilyPage'
 import TreePage from './containers/tree-page/TreePage'
 
-import RelativesContainer from './containers/RelativesContainer';
+// import RelativesContainer from './containers/RelativesContainer';
 
 
 // import history from "./router/history";
@@ -37,6 +38,10 @@ const App = () => {
           <NavBar />
           <Switch>
             <Route exact path="/">
+              <Redirect to='/dashboard' />
+            </Route>
+
+            <Route path='/dashboard'>
               <Dashboard />
             </Route>
 
@@ -44,7 +49,9 @@ const App = () => {
               <ProfilePage />
             </Route>
 
-            <Route path='/relatives/:relativeId' children={<RelativeShow />} />
+            <Route path='/relatives/:relativeId'>
+              <RelativeShow />
+            </Route>
 
             <Route path='/relatives'>
               <FamilyPage />
