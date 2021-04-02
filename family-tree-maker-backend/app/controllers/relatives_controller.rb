@@ -86,6 +86,51 @@ class RelativesController < ApplicationController
         end
 
 
+        def update
+
+            relative = Relative.find_by(relativeId: params['relativeId'])
+            user = User.find_by(userId: params['userId'])
+
+            if relative && (relative.userId == params['userId'])
+
+                relative.update(
+                     firstName: params['firstName'],
+            middleName: params['middleName'],
+            lastName: params['lastName'],
+            fullName: params['fullName'],
+            nickname: params['nickname'],
+            altName: params['altName'],
+            notes: params['notes'],
+            relationship: params['relationship'],
+            age: params['age'],
+            birthplace: params['birthplace'],
+            address: params['address'],
+            phone: params['phone'],
+            email: params['email'],
+            birthdate: params['birthdate'],
+            relativeId: params['relativeId'],
+            userId: user.userId,
+            user_id: user.id
+                )
+
+                render json: {
+                    success: true
+                }
+            elsif relative && (relative.userId != params['userId'])
+                render json: {
+                    success: false,
+                    error: 'This user is not authorized to update this record'
+                }
+            else
+                render json: {
+                    success: false,
+                    error: 'Unable to delete record'
+                }
+                end
+
+        end
+
+
 
         def delete
             relative = Relative.find_by(relativeId: params['relativeId'])
