@@ -1,26 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Button from 'react-bootstrap/Button'
+import { useHistory } from "react-router-dom";
 import Table from 'react-bootstrap/Table'
-import './RelativeShow.css'
+import Button from 'react-bootstrap/Button'
+import './RelativeDetails.css'
 
+const RelativeDetails = (props) => {
+    const relative = props.relative
 
-const RelativeShow = () => {
-    const relatives = useSelector(state => state.relatives.relatives)
-    const {relativeId} = useParams();
-    const relative = relatives.find(relative => relative.relativeId === relativeId)
+    const history = useHistory();
 
-    if (!relative) return <div>Relative Not Found</div>
+    function handleOnClick() {
+        history.push(`/relatives/${relative.relativeId}/edit`);
+        props.setEditing(true)
+    }
 
-    return (
-        <Container>
-            <h1>Relative Details</h1>
-            <Jumbotron>
-            <h2>{relative.fullName} ({relative.relationship})</h2>
-            
+    return (<div>
                 <Table  striped bordered hover size='sm'>
                     <tbody >
                         <tr>
@@ -64,7 +58,7 @@ const RelativeShow = () => {
                             <td>{}</td>
                         </tr>
                         <tr>
-                            <td>Birthplace:</td>
+                            <td>Relationship:</td>
                             <td>{}</td>
                         </tr>
                         <tr>
@@ -81,18 +75,17 @@ const RelativeShow = () => {
                         </tr>
                     </tbody>
                 </Table>
-                
-            
-            <br/>
-            <br/>
-            <Button className="edit-button" variant='primary' size='sm' block>Edit Relative</Button>
-            <Button className="delete-button" variant='danger' size='sm' block>Delete Relative</Button>
-            </Jumbotron>
-        </Container>
+                <Button 
+className="edit-button" 
+variant='primary' 
+size='sm' 
+block
+onClick={handleOnClick}>Edit Relative</Button>
+</div>
     )
 }
 
-export default RelativeShow
+export default RelativeDetails
 
 // Full Name: {relative.fullName}
 //                 <br/>

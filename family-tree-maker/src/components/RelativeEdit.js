@@ -1,12 +1,22 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
 
-const RelativeEdit = () => {
+
+const RelativeEdit = (props) => {
+const relative = props.relative
+const history = useHistory()
 
 
+function handleOnClick() {
+    history.push(`/relatives/${relative.relativeId}`);
+    props.setEditing(false)
+}
     return (
+        <div>
         <Form>
                 <fieldset disabled>
                 <Form.Row>
@@ -31,7 +41,17 @@ const RelativeEdit = () => {
                 </Form.Group>
                 </Form.Row>
                 </fieldset>
+                <Button 
+                type='submit'
+className="update-button" 
+variant='primary' 
+size='sm' 
+block
+onClick={handleOnClick}>Save Changes</Button>
             </Form>
+
+
+</div>
     )
 
 
