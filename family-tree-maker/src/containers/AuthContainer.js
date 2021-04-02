@@ -12,8 +12,7 @@ const AuthContainer = () => {
         isAuthenticated,
         error,
         user,
-        loginWithRedirect,
-        logout
+        loginWithRedirect
       } = useAuth0();
 
 
