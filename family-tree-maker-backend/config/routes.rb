@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   delete 'relatives' => 'relatives#delete'
   post 'relatives' => 'relatives#create'
+  put 'relatives' => 'relatives#update'
   post 'resolve' => 'users#create'
   # post 'signup' => 'users#create'
   post 'login' => 'users#show'
