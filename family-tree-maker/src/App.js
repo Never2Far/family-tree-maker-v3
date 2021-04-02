@@ -12,7 +12,7 @@ import ProfilePage from './containers/profile-page/ProfilePage'
 import FamilyPage from './containers/family-page/FamilyPage'
 import TreePage from './containers/tree-page/TreePage'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import RelativeShow from './components/RelativeShow'
+import RelativeShowContainer from './containers/RelativeShowContainer'
 
 const App = () => {
 
@@ -36,9 +36,15 @@ const App = () => {
               <ProfilePage />
             </Route>
 
-            <Route path='/relatives/:relativeId'>
-              <RelativeShow />
+            <Route path='/relatives/:relativeId/edit'>
+              <RelativeShowContainer editing={true}/>
             </Route>
+
+            <Route path='/relatives/:relativeId'>
+              <RelativeShowContainer editing={false}/>
+            </Route>
+
+        
 
             <Route path='/relatives'>
               <FamilyPage />
