@@ -27,7 +27,7 @@ const RelativeShowContainer = (props) => {
             <Container>
                 <h1>Relative Details</h1>
                 <Jumbotron>
-                <h2>{relative.fullName} ({relative.relationship})</h2>
+                
 
                 {(editing) ? <RelativeEdit relative={relative} setEditing={setEditing}/> : <RelativeDetails relative={relative} setEditing={setEditing}/>}
 

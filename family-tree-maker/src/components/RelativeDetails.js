@@ -14,7 +14,10 @@ const RelativeDetails = (props) => {
         props.setEditing(true)
     }
 
-    return (<div>
+    return (
+    
+    <div>
+        <h2>{relative.fullName} ({relative.relationship})</h2>
                 <Table  striped bordered hover size='sm'>
                     <tbody >
                         <tr>

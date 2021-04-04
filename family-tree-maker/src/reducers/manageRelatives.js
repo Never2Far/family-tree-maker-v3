@@ -17,6 +17,11 @@ switch (action.type) {
     
         return Object.assign({}, {relatives: [...state.relatives]}, {loading: true})
 
+    case 'UPDATING_RELATIVE':
+        console.log('Updating relative...')
+    
+        return Object.assign({}, {relatives: [...state.relatives]}, {loading: true})
+
     case 'ADD_RELATIVE':
         
         const relative = action.payload
@@ -34,9 +39,17 @@ switch (action.type) {
 
         return Object.assign({}, {relatives: state.relatives.filter(relative => relative.relativeId !== action.payload.relativeId)}, {loading: false})
 
+    // case 'UPDATE_RELATIVE':
+
+    //         return Object.assign({}, 
+    //             {relatives: state.relatives.filter(relative => relative.relativeId !== action.payload.relativeId)}, 
+    //             {},
+    //             {loading: false})
+    
     default:
         return state
 }
+
 }
 
 export default manageRelatives

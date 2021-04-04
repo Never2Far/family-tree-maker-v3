@@ -114,7 +114,9 @@ class RelativesController < ApplicationController
                 )
 
                 render json: {
-                    success: true
+                    success: true,
+                    relativeId: relative.relativeId,
+                    relative: relative
                 }
             elsif relative && (relative.userId != params['userId'])
                 render json: {
