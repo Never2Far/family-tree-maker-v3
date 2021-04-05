@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useHistory, Redirect} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {updateRelative} from '../actions/updateRelative'
 import Form from 'react-bootstrap/Form'
@@ -9,18 +9,15 @@ import Button from 'react-bootstrap/Button'
 
 
 const RelativeEdit = (props) => {
-    const formElement = document.querySelector('#edit-form')
+    // const formElement = document.querySelector('#edit-form')
 const relative = props.relative
 const history = useHistory()
 
 
     const [firstName, setFirstName] = useState(relative.firstName)
     const [lastName, setLastName] = useState(relative.lastName)
-
     const [middleName, setMiddleName] = useState(relative.middleName)
-
     const [nickname, setNickname] = useState(relative.nickname)
-
     const [altName, setAltName] = useState(relative.altName)
     const [birthdate, setBirthdate] = useState(relative.birthdate)
     const [email, setEmail] = useState(relative.email)
@@ -32,12 +29,12 @@ const history = useHistory()
     // const [age, setAge] = useState()
     const [notes, setNotes] = useState(relative.notes)
 
-    const [relationship, setRelationship] = useState()
+    // const [relationship, setRelationship] = useState()
 
     
     
 
-    const [birthplace, setBirthplace] = useState()
+    const [birthplace, setBirthplace] = useState(relative.birthplace)
 
     
 
@@ -74,7 +71,7 @@ function handleOnSubmit(e) {
     nickname,
     altName,
      notes,
-    relationship,
+    // relationship,
      relativeId: relative.relativeId,
      userId: relative.userId,
     birthdate,
@@ -96,7 +93,7 @@ function handleOnSubmit(e) {
     dispatch(updateRelative(payload, history))
     props.setEditing(false)
     history.push(`/relatives/${relative.relativeId}`);
-    props.setEditing(false)
+    // props.setEditing(false)
         // <Redirect to={{pathname: `/relatives/${relative.relativeId}`}} push={true}/>
     
 }
@@ -105,19 +102,19 @@ function handleOnSubmit(e) {
 //     console.log(e.formdata);
 // }
 
-// function handleOnClick() {
+function handleOnClick() {
     
-//     history.push(`/relatives/${relative.relativeId}`);
-//     props.setEditing(false)
-// }
+    history.push(`/relatives/${relative.relativeId}`);
+    props.setEditing(false)
+}
     return (
         <div>
             <h2>{relative.fullName} ({relative.relationship})</h2>
         <Form onSubmit={e => handleOnSubmit(e)} id='edit-form' >
                 {/* <fieldset> */}
                 {/* <Form.Row> */}
-                <Form.Group as={Row} controlId="formRelationship">
-        <Form.Label>Relationship: </Form.Label>
+                {/* <Form.Group as={Row} controlId="formRelationship">
+        <Form.Label column sm={2}>Relationship: </Form.Label>
         <Col xs='auto'>
         <Form.Control 
         as="select"
@@ -125,17 +122,17 @@ function handleOnSubmit(e) {
           
           name='relationship'
           onChange={(event) => setRelationship(event.target.value)}
-          value={relationship}
+          selected={relationship}
         >
-        <option hidden value={relative.relationship}>Select one...</option>
-        <option>Spouse</option>
-        <option>Father</option>
-        <option>Mother</option>
-        <option>Sibling</option>
-        <option>Child</option>
+        <option hidden value>Select one...</option>
+        <option value='Spouse'>Spouse</option>
+        <option value='Father'>Father</option>
+        <option value='Mother'>Mother</option>
+        <option value='Sibling'>Sibling</option>
+        <option value='Child'>Child</option>
         </Form.Control>
         </Col>
-        </Form.Group>
+        </Form.Group> */}
                 <Form.Group as={Row}  controlId='formFirstName'>
                     
                     <Form.Label column sm={2}>
@@ -319,6 +316,7 @@ variant='primary'
 size='sm' 
 block
 >Save Changes</Button>
+<Button block variant='warning' onClick={handleOnClick}>Cancel</Button>
             </Form>
 
 

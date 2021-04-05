@@ -26,7 +26,7 @@ const RelativeDetails = (props) => {
                         </tr>
                         <tr>
                             <td>Middle Name:</td>
-                            <td>{}</td>
+                            <td>{relative.middleName}</td>
                         </tr>
                         <tr>
                             <td>Last Name:</td>
@@ -34,47 +34,47 @@ const RelativeDetails = (props) => {
                         </tr>
                         <tr>
                             <td>Nickname:</td>
-                            <td>{}</td>
+                            <td>{relative.nickname}</td>
                         </tr>
                         <tr>
                             <td>Alternative Names/Spelling:</td>
-                            <td>{}</td>
+                            <td>{relative.altName}</td>
                         </tr>
                         <tr>
                             <td>DOB:</td>
-                            <td>{}</td>
+                            <td>{relative.birthdate}</td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <td>Age:</td>
                             <td>{}</td>
-                        </tr>
+                        </tr> */}
                         <tr>
                             <td>Birthplace:</td>
-                            <td>{}</td>
+                            <td>{relative.birthplace}</td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td>{}</td>
+                            <td>{relative.email}</td>
                         </tr>
                         <tr>
                             <td>Phone:</td>
-                            <td>{}</td>
+                            <td>{relative.phone}</td>
                         </tr>
                         <tr>
                             <td>Relationship:</td>
-                            <td>{}</td>
+                            <td>{relative.relationship}</td>
                         </tr>
                         <tr>
                             <td>Address:</td>
-                            <td>{}</td>
+                            <td>{relative.address}</td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <td>Extra Details:</td>
                             <td>{}</td>
-                        </tr>
+                        </tr> */}
                         <tr>
                             <td>Notes:</td>
-                            <td>{}</td>
+                            <td>{relative.notes}</td>
                         </tr>
                     </tbody>
                 </Table>
