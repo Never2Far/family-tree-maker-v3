@@ -17,6 +17,7 @@ const RelativeDetails = (props) => {
     return (
     
     <div>
+        <Button variant='secondary'>{' <- back'}</Button>
         <h2>{relative.fullName} ({relative.relationship})</h2>
                 <Table  striped bordered hover size='sm'>
                     <tbody >
@@ -81,7 +82,7 @@ const RelativeDetails = (props) => {
                 <Button 
 className="edit-button" 
 variant='primary' 
-size='sm' 
+size='lg' 
 block
 onClick={handleOnClick}>Edit Relative</Button>
 </div>

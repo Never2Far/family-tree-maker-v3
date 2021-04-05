@@ -316,7 +316,7 @@ variant='primary'
 size='sm' 
 block
 >Save Changes</Button>
-<Button block variant='warning' onClick={handleOnClick}>Cancel</Button>
+<Button block variant='warning' size='lg' onClick={handleOnClick}>Cancel</Button>
             </Form>
 
 
