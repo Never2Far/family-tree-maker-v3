@@ -6,37 +6,37 @@
     height: 300px;
     grid-template-areas:
     
-    "Father Father t Mother Mother . . . grandMother-m grandMother-m t2 grandFather-m grandFather-m"
+    "father father t mother mother . . . mother-in-law mother-in-law t2 father-in-law father-in-law"
     "c7 s3 c s c3 . . . c4 s2 c2 s4 c8"
-    "Sibling2 . Sibling1 . user user t3 Spouse Spouse . SIL1 . SIL2"
+    "sibling-2 . sibling-1 . user user t3 spouse spouse . sibling-in-law-1 . sibling-in-law-2"
     ". . c5 c5 c5 t5 t4 t6 c6 c6 c6 . ."
-    ". child3 child3 . child1 child1 . child2 child2 . child4 child4 .";
+    ". child-3 child-3 . child-1 child-1 . child-2 child-2 . child-4 child-4 .";
 }
   
-  .Father { grid-area: Father; border: solid black; }
+  .father { grid-area: father; border: solid black; }
   
-  .Mother { grid-area: Mother; border: solid black; }
+  .mother { grid-area: mother; border: solid black; }
   
-  .grandFather-m { grid-area: grandFather-m; border: solid black; }
+  .father-in-law { grid-area: father-in-law; border: solid black; }
   
-  .grandMother-m { grid-area: grandMother-m; border: solid black; }
+  .mother-in-law { grid-area: mother-in-law; border: solid black; }
   
-  .Spouse { grid-area: Spouse; border: solid black; }
+  .spouse { grid-area: spouse; border: solid black; }
   
   .user { grid-area: user; border: solid black; }
   
-  .child2 { grid-area: child2; border: solid black; }
+  .child-2 { grid-area: child-2; border: solid black; }
   
-  .child1 { grid-area: child1; border: solid black; }
+  .child-1 { grid-area: child-1; border: solid black; }
   
-  .child3 { grid-area: child3; border: solid black; }
+  .child-3 { grid-area: child-3; border: solid black; }
   
-  .child4 { grid-area: child4; border: solid black; }
+  .child-4 { grid-area: child-4; border: solid black; }
 
-  .Sibling1 { grid-area: Sibling1; border: solid black;}
-.SIL1 { grid-area: SIL1; border: solid black;}
-.SIL2 { grid-area: SIL2; border: solid black;}
-.Sibling2 { grid-area: Sibling2; border: solid black;}
+  .sibling-1 { grid-area: sibling-1; border: solid black;}
+.sibling-in-law-1 { grid-area: sibling-in-law-1; border: solid black;}
+.sibling-in-law-2 { grid-area: sibling-in-law-2; border: solid black;}
+.sibling-2 { grid-area: sibling-2; border: solid black;}
 
   .t {
     display: grid;

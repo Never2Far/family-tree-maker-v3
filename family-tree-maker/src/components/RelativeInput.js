@@ -79,11 +79,13 @@ const payload = {
           value={relationship}
         >
         <option hidden value>Select one...</option>
-        <option>Spouse</option>
-        <option>Father</option>
-        <option>Mother</option>
-        <option>Sibling</option>
-        <option>Child</option>
+        <option value='spouse'>Spouse</option>
+        <option value='father'>Father</option>
+        <option value='mother'>Mother</option>
+        <option value='father-in-law'>Father-in-law</option>
+        <option value='mother-in-law'>Mother-in-law</option>
+        <option value='sibling'>Sibling</option>
+        <option value='child'>Child</option>
         </Form.Control>
         </Form.Group>
         

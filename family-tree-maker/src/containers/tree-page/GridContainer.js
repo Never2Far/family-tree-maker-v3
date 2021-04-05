@@ -14,6 +14,18 @@ function GridContainer(props) {
   const {user} = useAuth0();
 
 
+const drawLines = (relationship) => {
+
+  switch (relationship) {
+    case 'spouse':
+      return <div></div>
+      
+  
+    default:
+      break;
+  }
+}
+
 return (
 
 <Container>
@@ -23,18 +35,21 @@ return (
   <div className={relative.relationship} key={relative.relativeId}>
     <Link
     to={`/relatives/${relative.relativeId}`}>{`${relative.fullName}`}</Link>
-    </div>)}
+    
+    
+    </div>
+    )}
   
-  <div className="grandFather-m">Test</div>
-  <div className="grandMother-m">Test</div>
-  <div className="child2">Test</div>
-  <div className="child1">Test</div>
-  <div className="child3">Test</div>
-  <div className="child4">Test</div>
-  <div className="Sibling1"></div>
-  <div className="SIL1"></div>
-  <div className="SIL2"></div>
-  <div className="Sibling2"></div>
+  <div className="father-in-law"></div>
+  <div className="mother-in-law"></div>
+  <div className="child-2"></div>
+  <div className="child-1"></div>
+  <div className="child-3"></div>
+  <div className="child-4"></div>
+  <div className="sibling-1"></div>
+  <div className="sibling-in-law-1"></div>
+  <div className="sibling-in-law-2"></div>
+  <div className="sibling-2"></div>
   <div className="t">
     <div className="tb"></div>
     <div className="tb-lb"></div>
