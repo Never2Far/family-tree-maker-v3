@@ -55,7 +55,7 @@ const RelativeShowContainer = (props) => {
             size='sm' 
             block
             onClick={() => setEditing(true)}>Edit Relative</Button> */}
-            <Button onClick={() => setModalShow(true)} className="delete-button" variant='danger' size='sm' block>Delete Relative</Button>
+            <Button onClick={() => setModalShow(true)} className="delete-button" variant='danger' size='lg' block>Delete Relative</Button>
             <DeleteConfirmModal 
             show={modalShow}
             onHide={() => setModalShow(false)}
