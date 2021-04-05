@@ -7,10 +7,10 @@
     grid-template-areas:
     
     "Father Father t Mother Mother . . . grandMother-m grandMother-m t2 grandFather-m grandFather-m"
-    ". . c s c3 . . . c4 s2 c2 . ."
-    ". . . . user user t3 Spouse Spouse . . . ."
+    "c7 s3 c s c3 . . . c4 s2 c2 s4 c8"
+    "Sibling2 . Sibling1 . user user t3 Spouse Spouse . SIL1 . SIL2"
     ". . c5 c5 c5 t5 t4 t6 c6 c6 c6 . ."
-    ". child1 child1 . child2 child2 . child3 child3 . child4 child4 .";
+    ". child3 child3 . child1 child1 . child2 child2 . child4 child4 .";
 }
   
   .Father { grid-area: Father; border: solid black; }
@@ -32,6 +32,11 @@
   .child3 { grid-area: child3; border: solid black; }
   
   .child4 { grid-area: child4; border: solid black; }
+
+  .Sibling1 { grid-area: Sibling1; border: solid black;}
+.SIL1 { grid-area: SIL1; border: solid black;}
+.SIL2 { grid-area: SIL2; border: solid black;}
+.Sibling2 { grid-area: Sibling2; border: solid black;}
 
   .t {
     display: grid;
@@ -76,23 +81,25 @@
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-      ". lb-bb"
-      ". .";
+      "bb15 lb-bb"
+      ". lb13";
     grid-area: c;
   }
   .lb-bb { grid-area: lb-bb;  border-bottom: solid black;border-left: solid black; }
+  .lb13 {grid-area: lb13; border-left: solid black;}
   .c2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-      "bb5 lb5"
-      ". .";
+      "bb5 lb5-bb16"
+      ". lb12";
     grid-area: c2;
   }
   .bb5 { grid-area: bb5; border-bottom: solid black; }
-  .lb5 { grid-area: lb5; border-left: solid black;}
+  .lb5-bb16 { grid-area: lb5-bb16; border-left: solid black; border-bottom: solid black;}
+  .lb12 {grid-area: lb12; border-left: solid black;} 
   .s {
     display: grid;
     grid-template-columns: 1fr;
@@ -199,3 +206,53 @@
   }
   .bb10 { grid-area: bb10;border-bottom: solid black; }
   .rb10 { grid-area: rb10;border-right: solid black; }
+
+  .c7 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". bb13"
+      ". lb10";
+    grid-area: c7;
+  }
+  .bb13 { grid-area: bb13; border-bottom: solid black;}
+  .lb10 { grid-area: lb10; border-left: solid black;}
+  .s3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "bb11"
+      ".";
+    grid-area: s3;
+  }
+  .bb11 { grid-area: bb11; border-bottom: solid black;}
+  .s4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "bb12"
+      ".";
+    grid-area: s4;
+  }
+  .bb12 { grid-area: bb12; border-bottom: solid black;}
+  .c8 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "bb14 ."
+      "rb11 .";
+    grid-area: c8;
+  }
+  .bb14 { grid-area: bb14; border-bottom: solid black;}
+  .rb11 { grid-area: rb11; border-right: solid black;}
+
+  .bb15 { grid-area: bb15; border-bottom: solid black;}
+  
