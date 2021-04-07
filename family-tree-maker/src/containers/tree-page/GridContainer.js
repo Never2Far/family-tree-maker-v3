@@ -30,7 +30,7 @@ return (
 
 <Container>
 <div className="grid-container">
-<div className="user">{user.name}</div>
+<div className="user"><Link to='/profile'>{user.name}</Link></div>
   {relatives.map(relative => 
   <div className={relative.relationship} key={relative.relativeId}>
     <Link
