@@ -84,8 +84,15 @@ const payload = {
         <option value='mother'>Mother</option>
         <option value='father-in-law'>Father-in-law</option>
         <option value='mother-in-law'>Mother-in-law</option>
-        <option value='sibling'>Sibling</option>
-        <option value='child'>Child</option>
+        <option value='sibling-1'>Sibling-1</option>
+        <option value='sibling-2'>Sibling-2</option>
+        <option value='sibling-in-law-1'>Sibling-in-law-1</option>
+        <option value='sibling-in-law-2'>Sibling-in-law-2</option>
+        <option value='child-1'>Child-1</option>
+        <option value='child-2'>Child-2</option>
+        <option value='child-3'>Child-3</option>
+        <option value='child-4'>Child-4</option>
+
         </Form.Control>
         </Form.Group>
         
