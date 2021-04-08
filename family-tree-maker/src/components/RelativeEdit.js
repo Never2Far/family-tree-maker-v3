@@ -71,7 +71,7 @@ function handleOnSubmit(e) {
     nickname,
     altName,
      notes,
-    // relationship,
+    relationship: relative.relationship,
      relativeId: relative.relativeId,
      userId: relative.userId,
     birthdate,
@@ -313,7 +313,7 @@ function handleOnClick() {
                 type='submit'
 className="update-button" 
 variant='primary' 
-size='sm' 
+size='lg' 
 block
 >Save Changes</Button>
 <Button block variant='warning' size='lg' onClick={handleOnClick}>Cancel</Button>
