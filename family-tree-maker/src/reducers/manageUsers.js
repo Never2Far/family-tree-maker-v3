@@ -10,7 +10,14 @@ switch (action.type) {
 
     case 'SET_USER_INFO':
 console.log(action.payload)
-        return Object.assign({}, {userInfo: action.payload}, {loading: false})
+const payload = action.payload
+for (const key in payload) {
+        const element = payload[key]
+        if (!element) {
+            payload[key] = ''
+        }
+}
+        return Object.assign({}, {userInfo: payload}, {loading: false})
 default:
     return state
 }
