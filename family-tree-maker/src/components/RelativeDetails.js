@@ -15,9 +15,9 @@ const RelativeDetails = (props) => {
     }
 
     return (
-    
+        
     <div>
-        <Button variant='secondary' onClick={() => history.push('/tree')} >{' <- back'}</Button>
+        <Button variant='secondary' onClick={() => history.goBack()} >{' <- back'}</Button>
         <h2>{relative.fullName} ({relative.relationship})</h2>
                 <Table  striped bordered hover size='sm'>
                     <tbody >
