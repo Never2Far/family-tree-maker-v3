@@ -25,15 +25,15 @@ const TreePage = () => {
 
     return (
         <div>
-        <div id='tree-container'>
+        
         <Container ref={treeRef}>
             <h1>Family Tree</h1>
             <GridContainer relatives={relatives}/>
         </Container>
-        </div>
+        
         <br></br>
         <br></br>
-        {/* <Container> */}
+        
         <Button 
         variant='primary' 
         size='lg'
@@ -42,7 +42,7 @@ const TreePage = () => {
                 onClick={handlePrint}
         >
         Click here to print your family tree!</Button>
-        {/* </Container> */}
+        
         </div>
     )
 }
