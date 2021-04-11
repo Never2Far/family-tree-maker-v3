@@ -5,24 +5,43 @@ class RelativesController < ApplicationController
         userId = request.headers["userId"]
 
         user = User.find_by(userId: userId)
-        if !user
+
+        # if !user
           
-            user = User.create(
-                userId: params['userId']
-              # uuid: CUID::generate(),
-              # email: params['email'],
-              # first_name: params['given_name'],
-              # last_name: params['family_name'],
-              # # username: params['username'],
-              # # password: params['password'],
-              # # password_confirmation: params['password'],
-              # auth_token: unique_auth_token
-            )
-          end
+        #     user = User.create(
+        #         userId: userParams['userId']
+        #         # email: userParams['email'],
+        #         # firstName: userParams['firstName'],
+        #         # lastName: userParams['lastName'],
+        #         # fullName: userParams['fullName']
+        #       # uuid: CUID::generate(),
+              
+        #       # first_name: params['given_name'],
+        #       # last_name: params['family_name'],
+        #       # # username: params['username'],
+        #       # # password: params['password'],
+        #       # # password_confirmation: params['password'],
+        #       # auth_token: unique_auth_token
+        #     )
+
+        #     userRelative = Relative.create(
+        #         userId: userParams['userId'],
+        #         user_id: user.id,
+        #         relativeId: userParams['userId'],
+        #         email: userParams['email'],
+        #         firstName: userParams['firstName'],
+        #         lastName: userParams['lastName'],
+        #         fullName: userParams['fullName']
+        #     )
+
+
+        #   end
         relatives = user.relatives
+        # relatives.shift
 
         if user && relatives
-        render json: {relatives: relatives}
+        render json: {relatives: relatives
+                        }
         else
             render json: {error: 'Something went wrong'}
         end
@@ -33,20 +52,20 @@ class RelativesController < ApplicationController
         puts params
         user = User.find_by(userId: params['userId'])
 
-        if !user
+        # if !user
           
-          user = User.create(
-              userId: params['userId']
-            # uuid: CUID::generate(),
-            # email: params['email'],
-            # first_name: params['given_name'],
-            # last_name: params['family_name'],
-            # # username: params['username'],
-            # # password: params['password'],
-            # # password_confirmation: params['password'],
-            # auth_token: unique_auth_token
-          )
-        end
+        #   user = User.create(
+        #       userId: params['userId']
+        #     # uuid: CUID::generate(),
+        #     # email: params['email'],
+        #     # first_name: params['given_name'],
+        #     # last_name: params['family_name'],
+        #     # # username: params['username'],
+        #     # # password: params['password'],
+        #     # # password_confirmation: params['password'],
+        #     # auth_token: unique_auth_token
+        #   )
+        # end
 
         
 
