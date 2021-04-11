@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_171522) do
+ActiveRecord::Schema.define(version: 2021_04_11_025736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,28 +41,25 @@ ActiveRecord::Schema.define(version: 2021_04_10_171522) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "firstName"
-    t.string "lastName"
-    t.string "email"
-    t.text "userId"
+    t.string "firstName", default: ""
+    t.string "lastName", default: ""
+    t.string "email", default: ""
+    t.text "userId", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "auth_token"
-    t.string "uuid"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "birthdate"
-    t.integer "age"
-    t.string "birthplace"
-    t.string "phone"
-    t.text "address"
-    t.string "fullName"
-    t.string "middle_name"
-    t.string "middleName"
-    t.string "nickname"
-    t.string "altName"
-    t.text "relativeId"
+    t.string "uuid", default: ""
+    t.string "city", default: ""
+    t.string "state", default: ""
+    t.string "zip", default: ""
+    t.string "birthdate", default: ""
+    t.string "birthplace", default: ""
+    t.string "phone", default: ""
+    t.text "address", default: ""
+    t.string "fullName", default: ""
+    t.string "middleName", default: ""
+    t.string "nickname", default: ""
+    t.string "altName", default: ""
   end
 
 end
