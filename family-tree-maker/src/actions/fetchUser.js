@@ -1,3 +1,5 @@
+import App from "../App"
+
 export function fetchUser(userId) {
 
 return (dispatch) => {
@@ -16,8 +18,11 @@ fetch('http://localhost:3001/users', {
           .then(response => response.json())
           .then(result => {
               console.log(result)
+              dispatch({type: 'SETTING_USER_INFO'})
+              dispatch({type: 'SET_USER_INFO', payload: {needUserInfo: result.needUserInfo, userInfo: result.userInfo}})
+              // return <App needUserInfo={result.needUserInfo} />
+              
           })
-
 
 }
 

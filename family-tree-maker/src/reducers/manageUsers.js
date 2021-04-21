@@ -1,4 +1,5 @@
  function manageUsers(state = {
+     needUserInfo: false,
     userInfo: {},
     loading: false
 }, action) {
@@ -11,12 +12,12 @@ switch (action.type) {
     case 'SET_USER_INFO':
 console.log(action.payload)
 const payload = action.payload
-for (const key in payload) {
-        const element = payload[key]
-        if (!element) {
-            payload[key] = ''
-        }
-}
+// for (const key in payload) {
+//         const element = payload[key]
+//         if (!element) {
+//             payload[key] = ''
+//         }
+// }
         return Object.assign({}, {userInfo: payload}, {loading: false})
 
         case 'UPDATING_USER':

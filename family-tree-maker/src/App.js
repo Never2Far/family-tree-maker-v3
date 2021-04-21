@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import { useAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter as Router,
@@ -17,6 +18,8 @@ import RegForm from './components/RegForm';
 
 const App = (props) => {
 
+  const needUserInfo = useSelector(state => state.users.needUserInfo)
+
   const {logout} = useAuth0();
   // const userId = user.sub
 console.log(props)
@@ -26,15 +29,19 @@ console.log(props)
           <NavBar />
           <Switch>
             <Route exact path="/">
-              {props.needUserInfo === false ? <Redirect to='/dashboard'/> : <RegForm />}
+              {needUserInfo === false ? <Redirect to='/dashboard'/> : <Redirect to='/reg'/>}
 
               
               {/* <Redirect to='/dashboard'/> */}
             </Route>
 
-            <Route path='/dashboard'>
-              {/* <Dashboard /> */}
+            <Route path='/reg'>
               <RegForm />
+            </Route>
+
+            <Route path='/dashboard'>
+              <Dashboard />
+              
             </Route>
 
             <Route path='/profile'>
