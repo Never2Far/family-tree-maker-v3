@@ -1,7 +1,7 @@
 import {fetchRelatives} from './fetchRelatives'
 
 export function setUserInfo(user) {
-
+delete user.id
     return (dispatch) => {
         console.log(user)
         dispatch({type: 'SETTING_USER_INFO'})
@@ -19,7 +19,7 @@ export function setUserInfo(user) {
                 console.log(result)
                 const payload = {...result.userInfo}
                 console.log(payload)
-                dispatch({ type: 'SET_USER_INFO', payload});
+                // dispatch({ type: 'SET_USER_INFO', payload});
                 dispatch(fetchRelatives(payload.userId));
               }
                 else {
