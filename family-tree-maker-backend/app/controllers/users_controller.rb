@@ -34,15 +34,15 @@ class UsersController < ApplicationController
     success: true
     }
   elsif user
-    puts user.userId
-    puts user.firstName
-    puts user.lastName
+    puts user['userId']
+    puts user['firstName']
+    puts user['lastName']
     render json: {
       needUserInfo: false,
       # userInfo: user,
-      userInfo: {userId: user.userId,
-                  firstName: user.firstName,
-                lastName: user.lastName},
+      userInfo: {userId: user['userId'],
+                  firstName: user['firstName'],
+                lastName: user['lastName']},
     success: true
     }
   else
