@@ -18,7 +18,7 @@ const payload = action.payload
 //             payload[key] = ''
 //         }
 // }
-        return Object.assign({}, {userInfo: payload}, {loading: false})
+        return Object.assign({}, {...state}, {userInfo: payload.userInfo}, {loading: false})
 
         case 'UPDATING_USER':
 
