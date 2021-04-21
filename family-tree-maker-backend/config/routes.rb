@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   resources :relatives
-  # resources :users
+  # resources :users, only: :index
 
   delete 'relatives' => 'relatives#delete'
   post 'relatives' => 'relatives#create'
   put 'relatives' => 'relatives#update'
-  post 'users' => 'users#find_or_create'
+  get 'users' => 'users#find_or_create'
+  put 'users' => 'users#update'
   # post 'signup' => 'users#create'
   post 'login' => 'users#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

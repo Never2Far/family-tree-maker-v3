@@ -4,56 +4,56 @@ class UsersController < ApplicationController
     # skip_before_action :verify_authenticity_token
   
     def find_or_create
-      puts user_params
-      user = User.find_by(userId: user_params['userId'])
+      puts request.headers
+        request.headers.inspect
+        userId = request.headers["HTTP_USERID"]
 
+        user = User.find_by(userId: userId)
+      # puts user.inspect_params
+      # user = User.find_by(userId: user_params['userId'])
+      puts user.inspect
 
       if !user 
-        user = User.create(user_params)
-      end
-  
-      if user
-          user.update(user_params)
-          user.save
+        # user = User.create(user_params)
+                user = User.create(userId: userId)
 
-          # user['email']= user_params['email']
-          # user['firstName']= user_params['firstName']
-          # user['lastName']= user_params['lastName']
-          # user['fullName']= user_params['fullName']
-          # user['userId']= user_params['userId']
-          # user.save
-
-          # !user.email ? user['email']= user_params['email'] : false
-          # !user.firstName ? user['firstName']= user_params['firstName'] : false
-          # !user.lastName ? user['lastName']= user_params['lastName'] : false
-          # !user.fullName ? user['fullName']= user_params['fullName'] : false
-          # !user.userId ? user['userId']= user_params['userId'] : false
-          # user.save
-
-        # userInfo = {}
-        # user.attributes.each do |attr_name, attr_value|
-        #   if attr_value
-        #     userInfo[attr_name] = attr_value
-        #   end
         # user.save
-        # end
-        # puts userInfo
-        puts user
+        puts user.inspect
+      
+       
 
-    
-
-
+        render json: {
+          needUserInfo: true,
+          userInfo: user,
+        success: true
+        }
+      elsif !user['firstName'] || !user['lastName'] || user['firstName'] == "" || user['lastName'] == ""
     render json: {
+      needUserInfo: true,
       userInfo: user,
     success: true
     }
-    else
+  elsif user
+    puts user.userId
+    puts user.firstName
+    puts user.lastName
+    render json: {
+      needUserInfo: false,
+      # userInfo: user,
+      userInfo: {userId: user.userId,
+                  firstName: user.firstName,
+                lastName: user.lastName},
+    success: true
+    }
+  else
     render json: {
         success: false,
         error: "Something went wrong"
     }
     end
 
+
+    
 
     # userRelative = Relative.create(
     #     userId: userParams['userId'],
@@ -67,80 +67,50 @@ class UsersController < ApplicationController
   
     end
 
-    # userId: params['sub'],
-    #     email: params['email'],
-    #     firstName: params['given_name'],
-    #     lastName: params['family_name'],
-    #     fullName: params['name']
-
-# uuid: CUID::generate(),
-      
-      # first_name: params['given_name'],
-      # last_name: params['family_name'],
-      # # username: params['username'],
-      # # password: params['password'],
-      # # password_confirmation: params['password'],
-      # auth_token: unique_auth_token
 
 
+    def update
+      puts user_params
 
+      user = User.find_by(userId: user_params[:userId])
 
-
-
-
-    # def create
-    #     puts params
-    #     user = User.find_by(email: params['email'])
-
-    #     if !user
+      if !user
+        # user = User.create(user_params)
+        user = User.new()
+        user['userId']= user_params[:userId]
+        user['firstName']= user_params[:firstName]
+          user['lastName']= user_params[:lastName]
+          user['email']= user_params[:email]
+          puts user.inspect
+          user.save
           
-    #       user = User.create(
-    #         uuid: CUID::generate(),
-    #         email: params['email'],
-    #         first_name: params['given_name'],
-    #         last_name: params['family_name'],
-    #         # username: params['username'],
-    #         # password: params['password'],
-    #         # password_confirmation: params['password'],
-    #         auth_token: unique_auth_token
-    #       )
-    #     end
-
-    #     render json: {uuid: user.uuid,
-    #                   userToken: user.auth_token,
-    #                   success: true
-    #                   }
-  
-      # if user
-      #   # session[:user_id] = user.id
-      #   render json: { uuid: user.uuid,
-      #     userToken: user.auth_token,
-      #                   success: true }
-      # else
-      #   render json: { error: 'Unable to create new user',
-      #   success: false }
-      # end
-    # end
-
-
-    # def show
-    #   user = User.find_by(username: params['username'])
+      elsif !user['firstName'] || !user['lastName'] || user['firstName'] == "" || user['lastName'] == ""
+          user['firstName']= user_params[:firstName]
+          user['lastName']= user_params[:lastName]
+        # user = user.update(user_params)
+        user.save
+      end
       
-    #   if user.authenticate(params[:password])
-    #     # session[:user_id] = user.id
-    #     render json: {userToken: user.auth_token,
-    #     success: true}
-    #   else
-    #     render json: {error: 'Unable to authenticate',
-    #     success: false}
-    #   end
+      if user
+        puts user.inspect
+        render json: {
+          userInfo: user,
+        success: true
+        }
+      else
+        render json: {
+          success: false,
+          error: "Something went wrong"
+        }
+      end
 
-    # end
+    end
 
 private
     def user_params
-      params.require(:user).permit(:email, :lastName, :firstName, :fullName, :userId)
+      params.require(:user).permit(:email, :lastName, :firstName, :fullName, :userId, :city, :state, :zip, :birthdate,
+         :birthplace, :phone, :address, :middleName, :nickname, :altName)
     end
-
+    # , :id, :created_at, :updated_at, :auth_token, :uuid
 
 end
