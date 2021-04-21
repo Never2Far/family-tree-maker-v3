@@ -13,23 +13,28 @@ import FamilyPage from './containers/family-page/FamilyPage'
 import TreePage from './containers/tree-page/TreePage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RelativeShowContainer from './containers/RelativeShowContainer'
+import RegForm from './components/RegForm';
 
-const App = () => {
+const App = (props) => {
 
   const {logout} = useAuth0();
   // const userId = user.sub
-
+console.log(props)
   return (
    
        <Router >
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <Redirect to='/dashboard' />
+              {props.needUserInfo === false ? <Redirect to='/dashboard'/> : <RegForm />}
+
+              
+              {/* <Redirect to='/dashboard'/> */}
             </Route>
 
             <Route path='/dashboard'>
-              <Dashboard />
+              {/* <Dashboard /> */}
+              <RegForm />
             </Route>
 
             <Route path='/profile'>
@@ -54,7 +59,7 @@ const App = () => {
               <TreePage />
             </Route>
 
-            <Route path='/logout' render={() => <button onClick={logout({ returnTo: window.location.origin })}>Log Out</button>} />
+            <Route path='/logout' render={() => <button onClick={logout()}>Log Out</button>} />
           </Switch>
        </Router> 
       
