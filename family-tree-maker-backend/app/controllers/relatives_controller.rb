@@ -2,10 +2,11 @@ class RelativesController < ApplicationController
 
     def index
         puts request.headers
-        userId = request.headers["userId"]
+        request.headers.inspect
+        userId = request.headers["HTTP_USERID"]
 
         user = User.find_by(userId: userId)
-
+puts user
         # if !user
           
         #     user = User.create(
@@ -36,6 +37,7 @@ class RelativesController < ApplicationController
 
 
         #   end
+        puts user.relatives
         relatives = user.relatives
         # relatives.shift
 
@@ -51,7 +53,7 @@ class RelativesController < ApplicationController
     def create
         puts params
         user = User.find_by(userId: params['userId'])
-
+puts user
         # if !user
           
         #   user = User.create(
@@ -85,7 +87,7 @@ class RelativesController < ApplicationController
             email: params['email'],
             birthdate: params['birthdate'],
             relativeId: params['relativeId'],
-            userId: user.userId,
+            userId: params['userId'],
             user_id: user.id
         )
 
