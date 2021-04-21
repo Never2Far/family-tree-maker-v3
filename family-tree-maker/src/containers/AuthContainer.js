@@ -4,6 +4,8 @@ import App from '../App'
 import { useAuth0 } from '@auth0/auth0-react';
 import {fetchRelatives} from '../actions/fetchRelatives'
 import {setUserInfo} from '../actions/setUserInfo'
+import RegForm from '../components/RegForm'
+import { fetchUser } from '../actions/fetchUser';
 
 
 const AuthContainer = () => {
@@ -27,23 +29,37 @@ const AuthContainer = () => {
   if (isAuthenticated) {
 
 console.log(user)
-const payload = { userId: user.sub,
-                  email: user.email,
-                  lastName: user.family_name,
-                firstName: user.given_name,
-              fullName: user.name}
+console.log(user.given_name)
+// const payload = { userId: user.sub,
+//                   email: user.email,
+//                   lastName: user.family_name,
+//                 firstName: user.given_name,
+//               fullName: user.name}
+dispatch(fetchUser(user.sub))
+let needUserInfo = false;
+              
 
-  dispatch(setUserInfo(payload));
+              if (!user.given_name || !user.family_name) {
+                 needUserInfo = true
+                // return <RegForm />
+              }
+              
+              //  dispatch(setUserInfo(payload))
+              
+
+
+  // dispatch(setUserInfo(payload));
 
     
 
 
 return (
-<App />
+<App needUserInfo={needUserInfo}/>
 )
   }
   else {
-    return <button onClick={loginWithRedirect}>Log in</button>;
+    loginWithRedirect()
+    // return <button onClick={loginWithRedirect}>Log in</button>
   }
 
 }
@@ -51,3 +67,5 @@ return (
 export default AuthContainer
 
 // dispatch(fetchRelatives(user));
+
+// needUserInfo={needUserInfo}
