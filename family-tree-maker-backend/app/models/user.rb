@@ -1,7 +1,15 @@
 class User < ApplicationRecord
     has_many :relatives
     # has_secure_password
-    # validates :username, uniqueness: {case_sensitive: false}
+    validates :userId, uniqueness: {case_sensitive: false}
     attr_accessor :email, :lastName, :firstName, :fullName, :userId
+
+    def relatives
+        relatives = []
+       Relative.all.each do |relative|
+            relative.userId == self.userId ? relatives.push(relative) : false
+       end
+       return relatives
+    end
 
 end
