@@ -44,9 +44,15 @@ console.log(props)
               
             </Route>
 
-            <Route path='/profile'>
-              <ProfilePage />
+            <Route path='/profile/edit'>
+              <ProfilePage editing={true}/>
             </Route>
+
+            <Route path='/profile'>
+              <ProfilePage editing={false}/>
+            </Route>
+
+            
 
             <Route path='/relatives/:relativeId/edit'>
               <RelativeShowContainer editing={true}/>
