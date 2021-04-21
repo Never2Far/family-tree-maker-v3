@@ -18,6 +18,14 @@ for (const key in payload) {
         }
 }
         return Object.assign({}, {userInfo: payload}, {loading: false})
+
+        case 'UPDATING_USER':
+
+         console.log('Updating user...')
+    
+        return Object.assign({}, {...state}, {loading: true})
+
+        
 default:
     return state
 }
