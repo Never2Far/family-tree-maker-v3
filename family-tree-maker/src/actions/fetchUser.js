@@ -19,14 +19,11 @@ fetch('http://localhost:3001/users', {
           .then(result => {
               console.log(result)
               dispatch({type: 'SETTING_USER_INFO'})
-              dispatch({type: 'SET_USER_INFO', payload: {needUserInfo: result.needUserInfo, userInfo: result.userInfo}})
+              const payload = result.userInfo
+              dispatch({type: 'SET_USER_INFO', payload})
               // return <App needUserInfo={result.needUserInfo} />
-              
           })
-
 }
-
-
 }
 
 

@@ -10,7 +10,7 @@ export function updateUser(userInfo) {
         
     dispatch({ type: 'UPDATING_USER' })
     fetch('http://localhost:3001/users', {
-        method: "PUT",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json"
@@ -21,7 +21,8 @@ export function updateUser(userInfo) {
       .then(result => {
           if (result.success === true) {
             console.log(result);
-            dispatch({type: 'SET_USER_INFO', payload: result.userInfo})
+            const payload = result.userInfo
+            dispatch({type: 'SET_USER_INFO', payload})
             // dispatch(setUserInfo(result.userInfo))
             return <App needUserInfo={false}/>
             // history.push(`/relatives/${result.relativeObj.relativeId}`)
