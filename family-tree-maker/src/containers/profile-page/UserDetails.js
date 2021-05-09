@@ -2,12 +2,15 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import { useAuth0 } from '@auth0/auth0-react';
 // import '../../components/RelativeDetails.css'
 import './UserDetails.css'
 
 const UserDetails = (props) => {
     // const relative = props.relative
+    const { user } = useAuth0();
 const userInfo = props.userInfo
+console.log(userInfo)
     const history = useHistory();
 
     function handleOnClick() {
@@ -56,7 +59,7 @@ const userInfo = props.userInfo
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td>{userInfo.email}</td>
+                            <td>{user.email}</td>
                         </tr>
                         <tr>
                             <td>Phone:</td>
@@ -71,10 +74,10 @@ const userInfo = props.userInfo
                             <td>Extra Details:</td>
                             <td>{}</td>
                         </tr> */}
-                        <tr>
+                        {/* <tr>
                             <td>Notes:</td>
                             <td>{userInfo.notes}</td>
-                        </tr>
+                        </tr> */}
                     </tbody>
                 </Table>
                 <Button 
