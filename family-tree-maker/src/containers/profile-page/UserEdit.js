@@ -28,7 +28,7 @@ const history = useHistory()
     const [state, setState] = useState(userInfo.state)
     const [zip, setZip] = useState(userInfo.zip)
     // const [age, setAge] = useState()
-    const [notes, setNotes] = useState(userInfo.notes)
+    // const [notes, setNotes] = useState(userInfo.notes)
 
     // const [relationship, setRelationship] = useState()
 
@@ -68,10 +68,10 @@ function handleOnSubmit(e) {
          firstName,
     middleName,
     lastName,
-    fullName: `${firstName} ${lastName}`,
+    // fullName: `${firstName} ${lastName}`,
     nickname,
     altName,
-     notes,
+    //  notes,
      userId: userInfo.userId,
     birthdate,
     // age,
@@ -89,7 +89,7 @@ function handleOnSubmit(e) {
             if (!element) {payload[key] = ''}
     }
     console.log(payload);
-    dispatch(updateUser(payload, history))
+    dispatch(updateUser(payload))
     props.setEditing(false)
     history.push(`/profile`);
     // props.setEditing(false)
@@ -109,7 +109,7 @@ function handleOnClick() {
     return (
         <div>
             {/* <h2>{userInfo.fullName} ({userInfo.relationship})</h2> */}
-        <Form onSubmit={e => handleOnSubmit(e)} id='edit-form' >
+        <Form onSubmit={e => handleOnSubmit(e)} id='edit-user-form' >
                 {/* <fieldset> */}
                 {/* <Form.Row> */}
                 {/* <Form.Group as={Row} controlId="formRelationship">
@@ -294,7 +294,7 @@ function handleOnClick() {
     </Form.Group>
   </Form.Row>
 
-  <Form.Group as={Row} controlId='formNotes'>
+  {/* <Form.Group as={Row} controlId='formNotes'>
                     <Form.Label column sm={2}>
                         Notes:
                     </Form.Label>
@@ -305,7 +305,7 @@ function handleOnClick() {
                         value={notes}
                         onChange={(event) => setNotes(event.target.value)} />
                     </Col>
-                </Form.Group>
+                </Form.Group> */}
                 {/* </Form.Row> */}
                 {/* </fieldset> */}
                 <Button 
