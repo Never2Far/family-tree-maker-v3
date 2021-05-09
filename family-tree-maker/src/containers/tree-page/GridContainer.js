@@ -106,7 +106,7 @@ return (
     <div className="bb10"></div>
     <div className="rb10"></div>
   </div>
-  <div class="c7">
+  <div className="c7">
     <div className="bb13"></div>
     <div className="lb10"></div>
   </div>
