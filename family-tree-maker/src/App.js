@@ -22,7 +22,7 @@ const App = (props) => {
 
   const {logout} = useAuth0();
   // const userId = user.sub
-console.log(props)
+console.log(needUserInfo)
   return (
    
        <Router >
