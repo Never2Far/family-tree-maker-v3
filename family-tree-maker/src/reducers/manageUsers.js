@@ -1,4 +1,4 @@
- function manageUsers(state = {
+function manageUsers(state = {
      needUserInfo: false,
     userInfo: {},
     loading: false
@@ -8,7 +8,12 @@ switch (action.type) {
         console.log('Setting user...')
     
         return Object.assign({}, {...state}, {loading: true})
+        case 'FETCHING_USER':
 
+console.log('Fetching User...')
+    
+        return Object.assign({}, {...state}, {loading: true})
+        
     case 'SET_USER_INFO':
 console.log(action.payload)
 const payload = action.payload
@@ -18,7 +23,7 @@ const payload = action.payload
 //             payload[key] = ''
 //         }
 // }
-        return Object.assign({}, {...state}, {userInfo: payload.userInfo}, {loading: false})
+        return Object.assign({}, {...state}, {userInfo: payload}, {loading: false})
 
         case 'UPDATING_USER':
 
