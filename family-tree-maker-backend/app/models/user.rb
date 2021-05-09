@@ -1,8 +1,8 @@
 class User < ApplicationRecord
     has_many :relatives
     # has_secure_password
-    validates :userId, uniqueness: {case_sensitive: false}
-    attr_accessor :email, :lastName, :firstName, :fullName, :userId
+    validates :userId, uniqueness: true
+    # attr_accessor :email, :lastName, :firstName, :fullName, :userId
 
     def relatives
         relatives = []
