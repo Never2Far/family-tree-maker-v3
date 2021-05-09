@@ -21,7 +21,7 @@ export function updateUser(userInfo) {
       .then(result => {
           if (result.success === true) {
             console.log(result);
-            const payload = result.userInfo
+            const payload = Object.assign({}, result.userInfo, {userId: userDetails.userId})
             dispatch({type: 'SET_USER_INFO', payload})
             // dispatch(setUserInfo(result.userInfo))
             return <App needUserInfo={false}/>
