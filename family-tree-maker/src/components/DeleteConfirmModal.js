@@ -15,7 +15,11 @@ const DeleteConfirmModal = (props) => {
 
 return(
     <Modal
-    {...props}
+    show={props.show}
+            onHide={props.onHide}
+            // handleclickdelete={props.handleClickDelete}
+            // handleclickcancel={props.handleClickCancel}
+    // {...props}
     size='lg'
     centered
     backdrop="static"
@@ -30,8 +34,8 @@ return(
         <h4>Are you sure you want to delete this relative?</h4>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant='danger' onClick={props.onClickDelete}>Delete Relative</Button>
-        <Button variant='warning' onClick={props.onClickCancel}>Cancel</Button>
+        <Button variant='danger' onClick={props.handleclickdelete}>Delete Relative</Button>
+        <Button variant='warning' onClick={props.handleclickcancel}>Cancel</Button>
       </Modal.Footer>
     </Modal>
 )

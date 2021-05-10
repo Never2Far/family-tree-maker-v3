@@ -15,7 +15,7 @@ const Relative = (props) => {
 
 // const {user} = useAuth0();
 
-const onClickDelete = () => {
+const handleClickDelete = () => {
 
      const payload = {relativeId: props.relative.relativeId,
                         userId: props.relative.userId}
@@ -23,7 +23,7 @@ const onClickDelete = () => {
       setModalShow(false)
 }
 
-const onClickCancel = () => {
+const handleClickCancel = () => {
       setModalShow(false)
 }
 
@@ -45,8 +45,8 @@ const onClickCancel = () => {
           <DeleteConfirmModal 
             show={modalShow}
             onHide={() => setModalShow(false)}
-            onClickDelete={onClickDelete}
-            onClickCancel={onClickCancel}
+            handleclickdelete={handleClickDelete}
+            handleclickcancel={handleClickCancel}
             />
           </ListGroup.Item>
           
