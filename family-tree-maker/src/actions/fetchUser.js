@@ -1,4 +1,5 @@
 import App from "../App"
+import { fetchRelatives } from "./fetchRelatives"
 
 export function fetchUser(user) {
 
@@ -22,6 +23,7 @@ fetch('http://localhost:3001/users', {
               dispatch({type: 'SETTING_USER_INFO'})
               const payload = result.userInfo
               dispatch({type: 'SET_USER_INFO', payload})
+              dispatch(fetchRelatives(user.sub))
               // return <App needUserInfo={result.needUserInfo} />
           })
 }
