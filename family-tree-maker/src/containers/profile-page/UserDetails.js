@@ -18,6 +18,22 @@ console.log(userInfo)
         props.setEditing(true)
     }
 
+    function displayDate(birthdate) {
+        console.log(userInfo.birthdate)
+        console.log(birthdate)
+        const dobArr = birthdate.split("-")
+        console.log(dobArr)
+        const dob = []
+        dob.push(dobArr[1])
+        dob.push(dobArr[2])
+        dob.push(dobArr[0])
+
+        // dobArr.push(dobArr.shift()).join("-")
+        console.log(dob)
+        return dob.join("-")
+
+    }
+
     return (
         
     <div>
@@ -47,7 +63,7 @@ console.log(userInfo)
                         </tr>
                         <tr>
                             <td>DOB:</td>
-                            <td>{userInfo.birthdate}</td>
+                            <td>{displayDate(userInfo.birthdate)}</td>
                         </tr>
                         {/* <tr>
                             <td>Age:</td>
