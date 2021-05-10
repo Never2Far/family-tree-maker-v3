@@ -35,7 +35,7 @@ console.log(user.given_name)
 //                   lastName: user.family_name,
 //                 firstName: user.given_name,
 //               fullName: user.name}
-dispatch(fetchUser(user.sub))
+dispatch(fetchUser(user))
 // let needUserInfo = false;
               
 
