@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       puts request.headers
         request.headers.inspect
         userId = request.headers["HTTP_USERID"]
+        email = request.headers["HTTP_EMAIL"]
 
         user = User.find_by(userId: userId)
       # puts user.inspect_params
@@ -14,7 +15,8 @@ class UsersController < ApplicationController
 
       if !user 
         # user = User.create(user_params)
-                user = User.create(userId: userId)
+                user = User.create(userId: userId,
+                                    email: email)
 
         # user.save
         puts user.inspect

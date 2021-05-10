@@ -1,6 +1,6 @@
 import App from "../App"
 
-export function fetchUser(userId) {
+export function fetchUser(user) {
 
 return (dispatch) => {
 
@@ -11,7 +11,8 @@ fetch('http://localhost:3001/users', {
             headers: {
               "Content-Type": "application/json",
               "Accept": "application/json",
-              "userId": `${userId}`
+              "userId": `${user.sub}`,
+              "email" : `${user.email}`
             }
             // ,body: JSON.stringify(user)
         })
