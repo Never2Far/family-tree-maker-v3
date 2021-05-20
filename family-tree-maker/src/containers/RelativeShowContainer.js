@@ -21,18 +21,31 @@ const RelativeShowContainer = (props) => {
 
     if (!relative) return <div>Relative Not Found</div>
 
-    const onClickDelete = () => {
-        const payload = {relativeId: relative.relativeId,
-            userId: relative.userId}
-        dispatch(deleteRelative(payload))
-        setModalShow(false)
-        history.push('/relatives')
-    }
 
-    const onClickCancel = () => {
+    const handleClickDelete = () => {
 
-        setModalShow(false)
-    }
+        const payload = {relativeId: relativeId,
+                           userId: relative.userId}
+         dispatch(deleteRelative(payload))
+         setModalShow(false)
+         history.push('/relatives')
+   }
+   
+   const handleClickCancel = () => {
+         setModalShow(false)
+   }
+    // const onClickDelete = () => {
+    //     const payload = {relativeId: relative.relativeId,
+    //         userId: relative.userId}
+    //     dispatch(deleteRelative(payload))
+    //     setModalShow(false)
+    //     history.push('/relatives')
+    // }
+
+    // const onClickCancel = () => {
+
+    //     setModalShow(false)
+    // }
     // const handleOnClick = () => {
         
     // }
@@ -59,8 +72,8 @@ const RelativeShowContainer = (props) => {
             <DeleteConfirmModal 
             show={modalShow}
             onHide={() => setModalShow(false)}
-            onClickDelete={onClickDelete}
-            onClickCancel={onClickCancel}
+            handleclickdelete={handleClickDelete}
+            handleclickcancel={handleClickCancel}
             />
             </Jumbotron>
         </Container>
