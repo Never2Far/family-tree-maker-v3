@@ -39,7 +39,8 @@ return (
     
     </div>
     )}
-  
+  <div className="father"></div>
+  <div className="mother"></div>
   <div className="father-in-law"></div>
   <div className="mother-in-law"></div>
   <div className="child-2"></div>
