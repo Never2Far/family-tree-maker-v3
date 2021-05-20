@@ -103,8 +103,8 @@ function handleOnSubmit(e) {
 // }
 
 function handleOnClick() {
-    
-    history.push(`/relatives/${relative.relativeId}`);
+    history.goBack()
+    // history.push(`/relatives/${relative.relativeId}`);
     props.setEditing(false)
 }
     return (
