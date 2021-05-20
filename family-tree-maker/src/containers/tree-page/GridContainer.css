@@ -13,246 +13,215 @@
     ". child-3 child-3 . child-1 child-1 . child-2 child-2 . child-4 child-4 .";
 }
   
-  .father { grid-area: father; border: solid black; }
-  
-  .mother { grid-area: mother; border: solid black; }
-  
-  .father-in-law { grid-area: father-in-law; border: solid black; }
-  
-  .mother-in-law { grid-area: mother-in-law; border: solid black; }
-  
-  .spouse { grid-area: spouse; border: solid black; }
-  
-  .user { grid-area: user; border: solid black; }
-  
-  .child-2 { grid-area: child-2; border: solid black; }
-  
-  .child-1 { grid-area: child-1; border: solid black; }
-  
-  .child-3 { grid-area: child-3; border: solid black; }
-  
-  .child-4 { grid-area: child-4; border: solid black; }
+  .father { grid-area: father;}
+  .mother { grid-area: mother;}
+  .father-in-law { grid-area: father-in-law;}
+  .mother-in-law { grid-area: mother-in-law;}
+  .spouse { grid-area: spouse;}
+  .user { grid-area: user;}
+  .child-2 { grid-area: child-2;}
+  .child-1 { grid-area: child-1;}
+  .child-3 { grid-area: child-3;}
+  .child-4 { grid-area: child-4;}
+  .sibling-1 { grid-area: sibling-1;}
+  .sibling-2 { grid-area: sibling-2;}
+  .sibling-in-law-1 { grid-area: sibling-in-law-1;}
+  .sibling-in-law-2 { grid-area: sibling-in-law-2;}
 
-  .sibling-1 { grid-area: sibling-1; border: solid black;}
-.sibling-in-law-1 { grid-area: sibling-in-law-1; border: solid black;}
-.sibling-in-law-2 { grid-area: sibling-in-law-2; border: solid black;}
-.sibling-2 { grid-area: sibling-2; border: solid black;}
 
-  .t {
+  .father ,.mother ,.father-in-law ,.mother-in-law,.spouse ,.user  ,.child-2  ,.child-1  
+  ,.child-3  ,.child-4   ,.sibling-1 ,.sibling-in-law-1 ,.sibling-in-law-2 ,.sibling-2 {
+    border: solid black;
+  }
+
+
+  .t, .t2, .t3, .t4, .t5, .t6,
+  .c, .c2, .c3, .c4, .c5, .c6, .c7, .c8,
+  .s, .s2, .s3, .s4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
+  }
+
+  .t {
     grid-template-areas:
       ". ."
       "tb tb-lb";
     grid-area: t;
   }
-  .tb { grid-area: tb; border-top: solid black; }
-  .tb-lb { grid-area: tb-lb; border-top: solid black;border-left: solid black;}
   .t2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
     grid-template-areas:
       ". ."
       "tb2 tb2-lb2";
     grid-area: t2;
   }
-  .tb2 { grid-area: tb2; border-top: solid black;}
-  .tb2-lb2 { grid-area: tb2-lb2; border-top: solid black;border-left: solid black;}
   .t3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
     grid-template-areas:
       ". ."
       "tb3 tb3-lb3";
     grid-area: t3;
   }
-  .tb3 { grid-area: tb3; border-top: solid black;}
-  .tb3-lb3 { grid-area: tb3-lb3; border-top: solid black;border-left: solid black;}
-
-  .c {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb15 lb-bb"
-      ". lb13";
-    grid-area: c;
-  }
-  .lb-bb { grid-area: lb-bb;  border-bottom: solid black;border-left: solid black; }
-  .lb13 {grid-area: lb13; border-left: solid black;}
-  .c2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb5 lb5-bb16"
-      ". lb12";
-    grid-area: c2;
-  }
-  .bb5 { grid-area: bb5; border-bottom: solid black; }
-  .lb5-bb16 { grid-area: lb5-bb16; border-left: solid black; border-bottom: solid black;}
-  .lb12 {grid-area: lb12; border-left: solid black;} 
-  .s {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb"
-      ".";
-    grid-area: s;
-  }
-  .bb { grid-area: bb; border-bottom: solid black; }
-  .s2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb2"
-      ".";
-    grid-area: s2;
-  }
-  .bb2 { grid-area: bb2; border-bottom: solid black;}
-  .c3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb3 ."
-      "rb .";
-    grid-area: c3;
-  }
-  .rb { grid-area: rb; border-right: solid black;}
-  .bb3 { grid-area: bb3; border-bottom: solid black;}
-  .c4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      ". bb4"
-      ". lb4";
-    grid-area: c4;
-  }
-  .lb4 { grid-area: lb4;  border-left: solid black;}
-  .bb4 { grid-area: bb4;border-bottom: solid black; }
   .t4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
     grid-template-areas:
       "bb6 lb4-bb4"
       ". .";
     grid-area: t4;
   }
-  .lb4-bb4 { grid-area: lb4-bb4; border-left: solid black; border-bottom: solid black;}
-  .bb6 { grid-area: bb6;border-bottom: solid black; }
   .t5 {
-    display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
     grid-template-areas:
       "bb7"
       "lb7";
     grid-area: t5;
   }
-  .bb7 { grid-area: bb7; border-bottom: solid black;}
-  .lb7 { grid-area: lb7; border-left: solid black;}
-  .c5 {
-    display: grid;
+  .t6 {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
+    grid-template-areas:
+      "bb9 ."
+      "rb9 ." ;
+    grid-area: t6;
+  }
+
+  
+ 
+  .c {
+    grid-template-areas:
+      "bb15 lb-bb"
+      ". lb13";
+    grid-area: c;
+  }
+  .c2 {
+    grid-template-areas:
+      "bb5 lb5-bb16"
+      ". lb12";
+    grid-area: c2;
+  }
+  .c3 {
+    grid-template-areas:
+      "bb3 ."
+      "rb .";
+    grid-area: c3;
+  }
+  .c4 {
+    grid-template-areas:
+      ". bb4"
+      ". lb4";
+    grid-area: c4;
+  }
+  .c5 {
+    grid-template-columns: 1fr;
     grid-template-areas:
       "bb8"
       "lb8";
     grid-area: c5;
   }
-  .bb8 { grid-area: bb8;border-bottom: solid black; }
-  .lb8 { grid-area: lb8;border-left: solid black; }
-  .t6 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb9"
-      "rb9";
-    grid-area: t6;
-  }
-  .bb9 { grid-area: bb9;border-bottom: solid black; }
-  .rb9 { grid-area: rb9; border-right: solid black;}
   .c6 {
-    display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
     grid-template-areas:
       "bb10"
       "rb10";
     grid-area: c6;
   }
-  .bb10 { grid-area: bb10;border-bottom: solid black; }
-  .rb10 { grid-area: rb10;border-right: solid black; }
-
   .c7 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
     grid-template-areas:
       ". bb13"
       ". lb10";
     grid-area: c7;
   }
-  .bb13 { grid-area: bb13; border-bottom: solid black;}
-  .lb10 { grid-area: lb10; border-left: solid black;}
-  .s3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb11"
-      ".";
-    grid-area: s3;
-  }
-  .bb11 { grid-area: bb11; border-bottom: solid black;}
-  .s4 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "bb12"
-      ".";
-    grid-area: s4;
-  }
-  .bb12 { grid-area: bb12; border-bottom: solid black;}
   .c8 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
     grid-template-areas:
       "bb14 ."
       "rb11 .";
     grid-area: c8;
   }
+
+  .s {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bb"
+      ".";
+    grid-area: s;
+  }
+  .s2 {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bb2"
+      ".";
+    grid-area: s2;
+  }
+  .s3 {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bb11"
+      ".";
+    grid-area: s3;
+  }
+  .s4 {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bb12"
+      ".";
+    grid-area: s4;
+  }
+
+  .tb { grid-area: tb; border-top: solid black; }
+  .tb-lb { grid-area: tb-lb; border-top: solid black;border-left: solid black;}
+  
+  .tb2 { grid-area: tb2; border-top: solid black;}
+  .tb2-lb2 { grid-area: tb2-lb2; border-top: solid black;border-left: solid black;}
+  
+  .tb3 { grid-area: tb3; border-top: solid black;}
+  .tb3-lb3 { grid-area: tb3-lb3; border-top: solid black;border-left: solid black;}
+
+  .lb-bb { grid-area: lb-bb;  border-bottom: solid black;border-left: solid black; }
+  .lb13 {grid-area: lb13; border-left: solid black;}
+  
+  .bb5 { grid-area: bb5; border-bottom: solid black; }
+  .lb5-bb16 { grid-area: lb5-bb16; border-left: solid black; border-bottom: solid black;}
+  .lb12 {grid-area: lb12; border-left: solid black;} 
+  
+
+
+  .bb { grid-area: bb; border-bottom: solid black; }
+  
+  .bb2 { grid-area: bb2; border-bottom: solid black;}
+  
+  .rb { grid-area: rb; border-right: solid black;}
+  .bb3 { grid-area: bb3; border-bottom: solid black;}
+  
+  .lb4 { grid-area: lb4;  border-left: solid black;}
+  .bb4 { grid-area: bb4;border-bottom: solid black; }
+  
+  .lb4-bb4 { grid-area: lb4-bb4; border-left: solid black; border-bottom: solid black;}
+  .bb6 { grid-area: bb6;border-bottom: solid black; }
+  
+  .bb7 { grid-area: bb7; border-bottom: solid black;}
+  .lb7 { grid-area: lb7; border-left: solid black;}
+  
+  .bb8 { grid-area: bb8;border-bottom: solid black; }
+  .lb8 { grid-area: lb8;border-left: solid black; }
+  
+  .bb9 { grid-area: bb9;border-bottom: solid black; }
+  .rb9 { grid-area: rb9; border-right: solid black;}
+  
+  .bb10 { grid-area: bb10;border-bottom: solid black; }
+  .rb10 { grid-area: rb10;border-right: solid black; }
+
+  
+  .bb13 { grid-area: bb13; border-bottom: solid black;}
+  .lb10 { grid-area: lb10; border-left: solid black;}
+ 
+  .bb11 { grid-area: bb11; border-bottom: solid black;}
+  
+  .bb12 { grid-area: bb12; border-bottom: solid black;}
+  
   .bb14 { grid-area: bb14; border-bottom: solid black;}
   .rb11 { grid-area: rb11; border-right: solid black;}
 
   .bb15 { grid-area: bb15; border-bottom: solid black;}
+  
+  /* .grid-container div {
+    border: solid black;
+    /* background-color: cornflowerblue; */
   
