@@ -63,7 +63,7 @@ console.log(userInfo)
                         </tr>
                         <tr>
                             <td>DOB:</td>
-                            <td>{displayDate(userInfo.birthdate)}</td>
+                            <td>{userInfo.birthdate ? displayDate(userInfo.birthdate) : false}</td>
                         </tr>
                         {/* <tr>
                             <td>Age:</td>
