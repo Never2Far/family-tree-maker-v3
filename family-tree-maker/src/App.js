@@ -29,17 +29,17 @@ console.log(needUserInfo)
           <NavBar />
           <Switch>
             <Route exact path="/">
-              {needUserInfo === false ? <Redirect to='/dashboard'/> : <Redirect to='/reg'/>}
+              {/* {needUserInfo === false ? <Redirect to='/dashboard'/> : <Redirect to='/reg'/>} */}
 
               
-              {/* <Redirect to='/dashboard'/> */}
+              <Redirect to='/home'/>
             </Route>
 
             <Route path='/reg'>
               <RegForm />
             </Route>
 
-            <Route path='/dashboard'>
+            <Route path='/home'>
               <Dashboard />
               
             </Route>
