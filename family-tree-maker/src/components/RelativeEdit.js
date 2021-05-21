@@ -10,7 +10,6 @@ import Spinner from 'react-bootstrap/Spinner'
 
 
 const RelativeEdit = (props) => {
-    // const formElement = document.querySelector('#edit-form')
     const loading = useSelector(state => state.relatives.loading)
 const relative = props.relative
 const history = useHistory()
@@ -28,37 +27,8 @@ const history = useHistory()
     const [city, setCity] = useState(relative.city)
     const [state, setState] = useState(relative.state)
     const [zip, setZip] = useState(relative.zip)
-    // const [age, setAge] = useState()
     const [notes, setNotes] = useState(relative.notes)
-
-    // const [relationship, setRelationship] = useState()
-
-    
-    
-
     const [birthplace, setBirthplace] = useState(relative.birthplace)
-
-    
-
-
-
-
-    // firstName
-    // middleName
-    // lastName
-    // nickname
-    // altName
-    //  notes
-    // relationship
-    //  relativeId
-    //  userId
-    // fullName
-    // birthdate
-    // age
-    // birthplace
-    // email
-    // phone
-    // address
 
     
 const dispatch = useDispatch()
@@ -77,64 +47,35 @@ function handleOnSubmit(e) {
      relativeId: relative.relativeId,
      userId: relative.userId,
     birthdate,
-    // age,
     birthplace,
     email,
     phone,
     address
     }
 
-    console.log(payload);
 
     for (const key in payload) {
         
             const element = payload[key];
             if (!element) {payload[key] = ''}
     }
-    console.log(payload);
     dispatch(updateRelative(payload, history))
     props.setEditing(false)
     history.push(`/relatives/${relative.relativeId}`);
-    // props.setEditing(false)
-        // <Redirect to={{pathname: `/relatives/${relative.relativeId}`}} push={true}/>
+    
     
 }
 
-// function formElement.onformdata(e)  {
-//     console.log(e.formdata);
-// }
 
 function handleOnClick() {
     history.goBack()
-    // history.push(`/relatives/${relative.relativeId}`);
     props.setEditing(false)
 }
     return (
         <div>
             <h2>{relative.fullName} ({relative.relationship})</h2>
         <Form onSubmit={e => handleOnSubmit(e)} id='edit-form' >
-                {/* <fieldset> */}
-                {/* <Form.Row> */}
-                {/* <Form.Group as={Row} controlId="formRelationship">
-        <Form.Label column sm={2}>Relationship: </Form.Label>
-        <Col xs='auto'>
-        <Form.Control 
-        as="select"
-        size="sm"
-          
-          name='relationship'
-          onChange={(event) => setRelationship(event.target.value)}
-          selected={relationship}
-        >
-        <option hidden value>Select one...</option>
-        <option value='Spouse'>Spouse</option>
-        <option value='Father'>Father</option>
-        <option value='Mother'>Mother</option>
-        <option value='Sibling'>Sibling</option>
-        <option value='Child'>Child</option>
-        </Form.Control>
-        </Col>
-        </Form.Group> */}
+               
                 <Form.Group as={Row}  controlId='formFirstName'>
                     
                     <Form.Label column sm={2}>
@@ -309,8 +250,7 @@ function handleOnClick() {
                         onChange={(event) => setNotes(event.target.value)} />
                     </Col>
                 </Form.Group>
-                {/* </Form.Row> */}
-                {/* </fieldset> */}
+                
                 <Button 
                 type='submit'
 className="update-button" 

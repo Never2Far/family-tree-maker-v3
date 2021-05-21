@@ -4,7 +4,6 @@ import rootReducer from './reducers/rootReducer'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import './index.css';
-// import App from './App';
 import thunk from 'redux-thunk';
 import { Auth0Provider } from '@auth0/auth0-react';
 import AuthContainer from './containers/AuthContainer'

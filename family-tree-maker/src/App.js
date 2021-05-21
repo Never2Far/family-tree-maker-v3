@@ -14,14 +14,13 @@ import FamilyPage from './containers/family-page/FamilyPage'
 import TreePage from './containers/tree-page/TreePage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RelativeShowContainer from './containers/RelativeShowContainer'
-import RegForm from './components/RegForm';
 
-const App = (props) => {
+const App = () => {
 
   const needUserInfo = useSelector(state => state.users.needUserInfo)
 
   const {logout} = useAuth0();
-  // const userId = user.sub
+ 
 console.log(needUserInfo)
   return (
    
@@ -29,15 +28,10 @@ console.log(needUserInfo)
           <NavBar />
           <Switch>
             <Route exact path="/">
-              {/* {needUserInfo === false ? <Redirect to='/dashboard'/> : <Redirect to='/reg'/>} */}
-
-              
+             
               <Redirect to='/home'/>
             </Route>
 
-            <Route path='/reg'>
-              <RegForm />
-            </Route>
 
             <Route path='/home'>
               <Dashboard />

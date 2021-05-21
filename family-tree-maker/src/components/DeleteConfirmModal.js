@@ -4,22 +4,11 @@ import Button from 'react-bootstrap/Button'
 
 const DeleteConfirmModal = (props) => {
 
-//    const handleOnClickDelete = () => {
-//     props.onHide
-//    }
-
-
-//    const handleOnClickCancel = () => {
-//     props.onHide
-// }
-
 return(
     <Modal
     show={props.show}
             onHide={props.onHide}
-            // handleclickdelete={props.handleClickDelete}
-            // handleclickcancel={props.handleClickCancel}
-    // {...props}
+      
     size='lg'
     centered
     backdrop="static"

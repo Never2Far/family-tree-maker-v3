@@ -6,25 +6,10 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 function GridContainer(props) {
-  // const relatives = useSelector(state => state.relatives.relatives)
-  // const spouse = props.relatives.find(relative => relative.relationship === 'Spouse')
-  // const father = props.relatives.find(relative => relative.relationship === 'Father')
-  // const mother = props.relatives.find(relative => relative.relationship === 'Mother')
+ 
   const relatives = props.relatives
   const {user} = useAuth0();
 
-
-const drawLines = (relationship) => {
-
-  switch (relationship) {
-    case 'spouse':
-      return <div></div>
-      
-  
-    default:
-      break;
-  }
-}
 
 return (
 

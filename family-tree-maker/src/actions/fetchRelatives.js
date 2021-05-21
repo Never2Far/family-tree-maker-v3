@@ -1,5 +1,4 @@
 export function fetchRelatives(userId) {
-    console.log(userId)
       return (dispatch) => {
           
         dispatch({ type: 'FETCHING_RELATIVES' })
@@ -12,7 +11,6 @@ export function fetchRelatives(userId) {
             }})
           .then(response => response.json())
           .then(result => {
-              console.log(result);
               if (result.relatives.length > 0) {
                   result.relatives.forEach(relative => 
                 dispatch({ type: 'ADD_RELATIVE', payload: relative }))

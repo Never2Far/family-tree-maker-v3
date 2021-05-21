@@ -34,22 +34,7 @@ const RelativeShowContainer = (props) => {
    const handleClickCancel = () => {
          setModalShow(false)
    }
-    // const onClickDelete = () => {
-    //     const payload = {relativeId: relative.relativeId,
-    //         userId: relative.userId}
-    //     dispatch(deleteRelative(payload))
-    //     setModalShow(false)
-    //     history.push('/relatives')
-    // }
-
-    // const onClickCancel = () => {
-
-    //     setModalShow(false)
-    // }
-    // const handleOnClick = () => {
-        
-    // }
-
+    
 
     return (
         
@@ -62,12 +47,7 @@ const RelativeShowContainer = (props) => {
 
             <br/>
             <br/>
-            {/* <Button 
-            className="edit-button" 
-            variant='primary' 
-            size='sm' 
-            block
-            onClick={() => setEditing(true)}>Edit Relative</Button> */}
+           
             <Button onClick={() => setModalShow(true)} className="delete-button" variant='danger' size='lg' block>Delete Relative</Button>
             <DeleteConfirmModal 
             show={modalShow}

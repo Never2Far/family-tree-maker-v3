@@ -45,10 +45,7 @@ const RelativeDetails = (props) => {
                             <td>DOB:</td>
                             <td>{relative.birthdate}</td>
                         </tr>
-                        {/* <tr>
-                            <td>Age:</td>
-                            <td>{}</td>
-                        </tr> */}
+                       
                         <tr>
                             <td>Birthplace:</td>
                             <td>{relative.birthplace}</td>
@@ -69,10 +66,7 @@ const RelativeDetails = (props) => {
                             <td>Address:</td>
                             <td>{relative.address}</td>
                         </tr>
-                        {/* <tr>
-                            <td>Extra Details:</td>
-                            <td>{}</td>
-                        </tr> */}
+                        
                         <tr>
                             <td>Notes:</td>
                             <td>{relative.notes}</td>
@@ -90,26 +84,3 @@ onClick={handleOnClick}>Edit Relative</Button>
 }
 
 export default RelativeDetails
-
-// Full Name: {relative.fullName}
-//                 <br/>
-//                 Nickname:
-//                 <br/>
-//                 Alternative Names/Spelling:
-//                 <br/>
-//                 DOB:
-//                 <br/>
-//                 Age:
-//                 <br/>
-//                 Birthplace:
-//                 <br/>
-//                 Email:
-//                 <br/>
-//                 Phone:
-//                 <br/>
-//                 Address:
-//                 <br/>
-//                 Extra Details:
-//                 <br/>
-//                 Notes:
-//                 <br/>

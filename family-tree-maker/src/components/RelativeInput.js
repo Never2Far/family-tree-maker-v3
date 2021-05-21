@@ -29,7 +29,6 @@ const payload = {
   relationship: relationship,
   userId: userId
 }
-    console.log(payload)
 
     dispatch(saveRelative(payload))
 

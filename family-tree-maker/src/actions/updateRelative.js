@@ -1,9 +1,7 @@
 
 
-export function updateRelative(relativeObj, history) {
-    console.log(relativeObj)
+export function updateRelative(relativeObj) {
         const relative = relativeObj
-        const relativeId = relativeObj.relativeId
 
   return (dispatch) => {
         

@@ -1,7 +1,6 @@
 import cuid from 'cuid';
 
 export function saveRelative(relativeObj) {
-  console.log(relativeObj)
   const relative = {
     firstName: relativeObj.firstName,
     lastName: relativeObj.lastName,

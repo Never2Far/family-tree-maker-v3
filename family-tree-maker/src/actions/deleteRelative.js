@@ -1,5 +1,4 @@
 export function deleteRelative(relativeObj) {
-  console.log(relativeObj)
   const relative = {
     userId: relativeObj.userId,
     relativeId: relativeObj.relativeId

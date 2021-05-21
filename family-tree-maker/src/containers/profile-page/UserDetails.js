@@ -3,14 +3,11 @@ import { useHistory } from "react-router-dom";
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import { useAuth0 } from '@auth0/auth0-react';
-// import '../../components/RelativeDetails.css'
 import './UserDetails.css'
 
 const UserDetails = (props) => {
-    // const relative = props.relative
     const { user } = useAuth0();
 const userInfo = props.userInfo
-console.log(userInfo)
     const history = useHistory();
 
     function handleOnClick() {
@@ -19,17 +16,14 @@ console.log(userInfo)
     }
 
     function displayDate(birthdate) {
-        console.log(userInfo.birthdate)
-        console.log(birthdate)
+        
         const dobArr = birthdate.split("-")
-        console.log(dobArr)
         const dob = []
         dob.push(dobArr[1])
         dob.push(dobArr[2])
         dob.push(dobArr[0])
 
-        // dobArr.push(dobArr.shift()).join("-")
-        console.log(dob)
+        
         return dob.join("-")
 
     }
@@ -37,7 +31,6 @@ console.log(userInfo)
     return (
         
     <div>
-        {/* <Button variant='secondary' onClick={() => history.goBack()} >{' <- back'}</Button> */}
         
                 <Table  striped bordered hover size='sm'>
                     <tbody >
@@ -65,10 +58,7 @@ console.log(userInfo)
                             <td>DOB:</td>
                             <td>{userInfo.birthdate ? displayDate(userInfo.birthdate) : false}</td>
                         </tr>
-                        {/* <tr>
-                            <td>Age:</td>
-                            <td>{}</td>
-                        </tr> */}
+                        
                         <tr>
                             <td>Birthplace:</td>
                             <td>{userInfo.birthplace}</td>
@@ -86,14 +76,7 @@ console.log(userInfo)
                             <td>Address:</td>
                             <td>{userInfo.address}</td>
                         </tr>
-                        {/* <tr>
-                            <td>Extra Details:</td>
-                            <td>{}</td>
-                        </tr> */}
-                        {/* <tr>
-                            <td>Notes:</td>
-                            <td>{userInfo.notes}</td>
-                        </tr> */}
+                        
                     </tbody>
                 </Table>
                 <Button 
@@ -107,26 +90,3 @@ onClick={handleOnClick}>Edit Profile</Button>
 }
 
 export default UserDetails
-
-// Full Name: {relative.fullName}
-//                 <br/>
-//                 Nickname:
-//                 <br/>
-//                 Alternative Names/Spelling:
-//                 <br/>
-//                 DOB:
-//                 <br/>
-//                 Age:
-//                 <br/>
-//                 Birthplace:
-//                 <br/>
-//                 Email:
-//                 <br/>
-//                 Phone:
-//                 <br/>
-//                 Address:
-//                 <br/>
-//                 Extra Details:
-//                 <br/>
-//                 Notes:
-//                 <br/>

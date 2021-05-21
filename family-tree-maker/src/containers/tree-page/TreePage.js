@@ -9,15 +9,6 @@ const TreePage = () => {
 
     const relatives = useSelector(state => state.relatives.relatives)
     
-    //   function printDiv(elementId) {
-    //       var printContents = document.getElementById(elementId).innerHTML;
-    //      const w =window.open();
-    //       w.document.write(printContents);
-    //     //   w.write('<base href="' + location.origin + location.pathname + '">');
-    //       w.document.write('<link rel="stylesheet" href="GridContainer.css">');
-    //     //   w.print();
-    //     //   w.close();
-    //   }
         const treeRef = useRef()
         const handlePrint = useReactToPrint({
             content: () => treeRef.current

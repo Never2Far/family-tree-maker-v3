@@ -15,14 +15,8 @@ console.log('Fetching User...')
         return Object.assign({}, {...state}, {loading: true})
         
     case 'SET_USER_INFO':
-console.log(action.payload)
 const payload = action.payload
-// for (const key in payload) {
-//         const element = payload[key]
-//         if (!element) {
-//             payload[key] = ''
-//         }
-// }
+
         return Object.assign({}, {...state}, {userInfo: payload}, {loading: false})
 
         case 'UPDATING_USER':

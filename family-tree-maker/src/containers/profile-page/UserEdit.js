@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-// import {updateRelative} from '../actions/updateRelative'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -11,7 +10,6 @@ import { updateUser } from '../../actions/updateUser'
 
 
 const UserEdit = (props) => {
-    // const formElement = document.querySelector('#edit-form')
     const loading = useSelector(state => state.relatives.loading)
 
 const userInfo = props.userInfo
@@ -24,43 +22,15 @@ const history = useHistory()
     const [nickname, setNickname] = useState(userInfo.nickname)
     const [altName, setAltName] = useState(userInfo.altName)
     const [birthdate, setBirthdate] = useState(userInfo.birthdate)
-    // const [email, setEmail] = useState(userInfo.email)
     const [phone, setPhone] = useState(userInfo.phone)
     const [address, setAddress] = useState(userInfo.address)
     const [city, setCity] = useState(userInfo.city)
     const [state, setState] = useState(userInfo.state)
     const [zip, setZip] = useState(userInfo.zip)
-    // const [age, setAge] = useState()
-    // const [notes, setNotes] = useState(userInfo.notes)
-
-    // const [relationship, setRelationship] = useState()
-
-    
+   
     
 
     const [birthplace, setBirthplace] = useState(userInfo.birthplace)
-
-    
-
-
-
-
-    // firstName
-    // middleName
-    // lastName
-    // nickname
-    // altName
-    //  notes
-    // relationship
-    //  userInfoId
-    //  userId
-    // fullName
-    // birthdate
-    // age
-    // birthplace
-    // email
-    // phone
-    // address
 
     
 const dispatch = useDispatch()
@@ -71,38 +41,27 @@ function handleOnSubmit(e) {
          firstName,
     middleName,
     lastName,
-    // fullName: `${firstName} ${lastName}`,
     nickname,
     altName,
-    //  notes,
      userId: userInfo.userId,
     birthdate,
-    // age,
     birthplace,
-    
     phone,
     address
     }
-
-    console.log(payload);
 
     for (const key in payload) {
         
             const element = payload[key];
             if (!element) {payload[key] = ''}
     }
-    console.log(payload);
     dispatch(updateUser(payload))
     props.setEditing(false)
     history.push(`/profile`);
-    // props.setEditing(false)
-        // <Redirect to={{pathname: `/userInfos/${userInfo.userInfoId}`}} push={true}/>
+    
     
 }
 
-// function formElement.onformdata(e)  {
-//     console.log(e.formdata);
-// }
 
 function handleOnClick() {
     
@@ -111,30 +70,9 @@ function handleOnClick() {
 }
     return (
         <div>
-            {/* <h2>{userInfo.fullName} ({userInfo.relationship})</h2> */}
+            
         <Form onSubmit={e => handleOnSubmit(e)} id='edit-user-form' >
-                {/* <fieldset> */}
-                {/* <Form.Row> */}
-                {/* <Form.Group as={Row} controlId="formRelationship">
-        <Form.Label column sm={2}>Relationship: </Form.Label>
-        <Col xs='auto'>
-        <Form.Control 
-        as="select"
-        size="sm"
-          
-          name='relationship'
-          onChange={(event) => setRelationship(event.target.value)}
-          selected={relationship}
-        >
-        <option hidden value>Select one...</option>
-        <option value='Spouse'>Spouse</option>
-        <option value='Father'>Father</option>
-        <option value='Mother'>Mother</option>
-        <option value='Sibling'>Sibling</option>
-        <option value='Child'>Child</option>
-        </Form.Control>
-        </Col>
-        </Form.Group> */}
+                
                 <Form.Group as={Row}  controlId='formFirstName'>
                     
                     <Form.Label column sm={2}>
@@ -202,18 +140,7 @@ function handleOnClick() {
                     </Col>
                 </Form.Group>
 
-                {/* <Form.Group as={Row} controlId='formEmail'>
-                    <Form.Label column sm={2}>
-                        Email:
-                    </Form.Label>
-                    <Col xs='auto'>
-                        <Form.Control 
-                        type='email' 
-                        name="email" 
-                        value={email}
-                        onChange={(event) => setEmail(event.target.value)} />
-                    </Col>
-                </Form.Group> */}
+               
 
                 <Form.Group as={Row} controlId='formPhone'>
                     <Form.Label column sm={2}>
@@ -297,20 +224,6 @@ function handleOnClick() {
     </Form.Group>
   </Form.Row>
 
-  {/* <Form.Group as={Row} controlId='formNotes'>
-                    <Form.Label column sm={2}>
-                        Notes:
-                    </Form.Label>
-                    <Col >
-                        <Form.Control 
-                        as='textarea' 
-                        name="notes" 
-                        value={notes}
-                        onChange={(event) => setNotes(event.target.value)} />
-                    </Col>
-                </Form.Group> */}
-                {/* </Form.Row> */}
-                {/* </fieldset> */}
                 <Button 
                 type='submit'
 className="update-button" 
