@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {updateRelative} from '../actions/updateRelative'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner'
 
 
 const RelativeEdit = (props) => {
     // const formElement = document.querySelector('#edit-form')
+    const loading = useSelector(state => state.relatives.loading)
 const relative = props.relative
 const history = useHistory()
 
@@ -315,7 +317,18 @@ className="update-button"
 variant='primary' 
 size='lg' 
 block
->Save Changes</Button>
+>
+
+    {loading && <span><Spinner
+      as="span"
+      animation="border"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />Saving...</span>}
+    {!loading && <span>Save Changes</span>}
+    
+    </Button>
 <Button block variant='warning' size='lg' onClick={handleOnClick}>Cancel</Button>
             </Form>
 
