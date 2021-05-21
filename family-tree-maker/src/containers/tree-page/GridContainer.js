@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux'
 import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import './GridContainer.css'
@@ -6,7 +7,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 function GridContainer(props) {
- 
+ const userInfo = useSelector(state => state.users.userInfo)
+ const fullName = `${userInfo.firstName} ${userInfo.lastName}`
   const relatives = props.relatives
   const {user} = useAuth0();
 
@@ -15,7 +17,7 @@ return (
 
 <Container>
 <div className="grid-container">
-<div className="user"><Link to='/profile'>{user.name}</Link></div>
+<div className="user"><Link to='/profile'>{fullName}</Link></div>
   {relatives.map(relative => 
   <div className={relative.relationship} key={relative.relativeId}>
     <Link
