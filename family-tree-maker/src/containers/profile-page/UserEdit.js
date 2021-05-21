@@ -229,15 +229,15 @@ function handleOnClick() {
 className="update-button" 
 variant='primary' 
 size='lg' 
-block
->{loading && <span><Spinner
+block>
+{/* >{loading && <span><Spinner
       as="span"
       animation="border"
       size="sm"
       role="status"
       aria-hidden="true"
-    />Saving...</span>}
-    {!loading && <span>Save Changes</span>}</Button>
+    />Saving...</span>} */}
+    Save Changes</Button>
 <Button block variant='warning' size='lg' onClick={handleOnClick}>Cancel</Button>
             </Form>
 

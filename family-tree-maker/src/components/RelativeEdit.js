@@ -259,14 +259,14 @@ size='lg'
 block
 >
 
-    {loading && <span><Spinner
+    {/* {loading && <span><Spinner
       as="span"
       animation="border"
       size="sm"
       role="status"
       aria-hidden="true"
-    />Saving...</span>}
-    {!loading && <span>Save Changes</span>}
+    />Saving...</span>} */}
+   Save Changes
     
     </Button>
 <Button block variant='warning' size='lg' onClick={handleOnClick}>Cancel</Button>
