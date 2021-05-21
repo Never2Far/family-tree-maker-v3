@@ -21,13 +21,13 @@ class UsersController < ApplicationController
        
 
         render json: {
-          needUserInfo: true,
+          
           userInfo: user,
         success: true
         }
       elsif user && (!user['firstName'] || !user['lastName'] || user['firstName'] == "" || user['lastName'] == "")
     render json: {
-      needUserInfo: true,
+      
       userInfo: user,
     success: true
     }
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     puts user['firstName']
     puts user['lastName']
     render json: {
-      needUserInfo: false,
+      
      
       userInfo: user,
     success: true

@@ -1,5 +1,4 @@
 function manageUsers(state = {
-     needUserInfo: false,
     userInfo: {},
     loading: false
 }, action) {
