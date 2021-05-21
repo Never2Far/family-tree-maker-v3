@@ -9,7 +9,7 @@ import { updateUser } from '../../actions/updateUser'
 
 
 const UserEdit = (props) => {
-    const loading = useSelector(state => state.relatives.loading)
+    // const loading = useSelector(state => state.relatives.loading)
 
 const userInfo = props.userInfo
 const history = useHistory()

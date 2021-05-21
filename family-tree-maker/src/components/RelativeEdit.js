@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const RelativeEdit = (props) => {
-    const loading = useSelector(state => state.relatives.loading)
+    // const loading = useSelector(state => state.relatives.loading)
 const relative = props.relative
 const history = useHistory()
 
