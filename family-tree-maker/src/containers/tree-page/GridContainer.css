@@ -12,7 +12,6 @@
     ". . c5 c5 c5 t5 t4 t6 c6 c6 c6 . ."
     ". child-3 child-3 . child-1 child-1 . child-2 child-2 . child-4 child-4 .";
 }
-  
   .father { grid-area: father;}
   .mother { grid-area: mother;}
   .father-in-law { grid-area: father-in-law;}
@@ -32,6 +31,8 @@
   .father ,.mother ,.father-in-law ,.mother-in-law,.spouse ,.user  ,.child-2  ,.child-1  
   ,.child-3  ,.child-4   ,.sibling-1 ,.sibling-in-law-1 ,.sibling-in-law-2 ,.sibling-2 {
     border: solid black;
+    text-align: center;
+    height: 60px;
   }
 
 
@@ -181,8 +182,6 @@
   .lb5-bb16 { grid-area: lb5-bb16; border-left: solid black; border-bottom: solid black;}
   .lb12 {grid-area: lb12; border-left: solid black;} 
   
-
-
   .bb { grid-area: bb; border-bottom: solid black; }
   
   .bb2 { grid-area: bb2; border-bottom: solid black;}
@@ -220,8 +219,4 @@
   .rb11 { grid-area: rb11; border-right: solid black;}
 
   .bb15 { grid-area: bb15; border-bottom: solid black;}
-  
-  /* .grid-container div {
-    border: solid black;
-    /* background-color: cornflowerblue; */
   
