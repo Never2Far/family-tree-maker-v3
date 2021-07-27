@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import UserDetails from './UserDetails'
@@ -10,7 +9,7 @@ import UserEdit from './UserEdit'
 const ProfilePage = (props) => {
     const userInfo = useSelector(state => state.users.userInfo)
 
-        const dispatch = useDispatch()
+        // const dispatch = useDispatch()
     const [editing, setEditing] = useState(props.editing)
 
     return (

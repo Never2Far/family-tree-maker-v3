@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {updateRelative} from '../actions/updateRelative'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
