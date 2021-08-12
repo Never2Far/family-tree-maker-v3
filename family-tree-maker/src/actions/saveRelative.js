@@ -1,4 +1,5 @@
-import cuid from 'cuid';
+import cuid from "cuid";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export function saveRelative(relativeObj) {
   const relative = {
@@ -7,27 +8,25 @@ export function saveRelative(relativeObj) {
     fullName: relativeObj.fullName,
     relationship: relativeObj.relationship,
     userId: relativeObj.userId,
-    relativeId: cuid()
-  }
-    return (dispatch) => {
-        
-      dispatch({ type: 'ADDING_RELATIVE' })
-      fetch('http://localhost:3001/relatives', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify(relative)
-      })
-        .then(response => response.json())
-        .then(result => {
-            if (result.success === true) {
-              dispatch({ type: 'ADD_RELATIVE', payload: relative });
-            }
-              else {
-                  console.log(result.error);
-             }
-    });
-  }
+    relativeId: cuid(),
+  };
+  return (dispatch) => {
+    dispatch({ type: "ADDING_RELATIVE" });
+    fetch(`${BASE_URL}/relatives`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(relative),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.success === true) {
+          dispatch({ type: "ADD_RELATIVE", payload: relative });
+        } else {
+          console.log(result.error);
+        }
+      });
+  };
 }
