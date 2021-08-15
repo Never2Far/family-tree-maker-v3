@@ -1,11 +1,10 @@
 import App from "../App";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export function updateUser(userInfo) {
   const userDetails = Object.assign({}, { user: userInfo });
   return (dispatch) => {
     dispatch({ type: "UPDATING_USER" });
-    fetch(`${BASE_URL}/users`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/users`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

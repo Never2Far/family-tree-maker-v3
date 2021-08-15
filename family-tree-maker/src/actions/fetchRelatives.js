@@ -1,9 +1,7 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-
 export function fetchRelatives(userId) {
   return (dispatch) => {
     dispatch({ type: "FETCHING_RELATIVES" });
-    fetch(`${BASE_URL}/relatives`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/relatives`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

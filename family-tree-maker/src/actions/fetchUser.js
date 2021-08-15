@@ -1,11 +1,10 @@
 import { fetchRelatives } from "./fetchRelatives";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export function fetchUser(user) {
   return (dispatch) => {
     dispatch({ type: "FETCHING_USER" });
 
-    fetch(`${BASE_URL}/users`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/users`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

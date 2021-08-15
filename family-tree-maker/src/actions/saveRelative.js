@@ -1,5 +1,4 @@
 import cuid from "cuid";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export function saveRelative(relativeObj) {
   const relative = {
@@ -12,7 +11,7 @@ export function saveRelative(relativeObj) {
   };
   return (dispatch) => {
     dispatch({ type: "ADDING_RELATIVE" });
-    fetch(`${BASE_URL}/relatives`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/relatives`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,11 +1,9 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-
 export function updateRelative(relativeObj) {
   const relative = relativeObj;
 
   return (dispatch) => {
     dispatch({ type: "UPDATING_RELATIVE" });
-    fetch(`${BASE_URL}/relatives`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/relatives`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

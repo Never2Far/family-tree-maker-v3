@@ -1,5 +1,3 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-
 export function deleteRelative(relativeObj) {
   const relative = {
     userId: relativeObj.userId,
@@ -7,7 +5,7 @@ export function deleteRelative(relativeObj) {
   };
   return (dispatch) => {
     dispatch({ type: "DELETING_RELATIVE" });
-    fetch(`${BASE_URL}/relatives`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/relatives`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

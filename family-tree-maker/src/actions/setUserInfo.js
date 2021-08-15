@@ -1,11 +1,10 @@
 import { fetchRelatives } from "./fetchRelatives";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export function setUserInfo(user) {
   delete user.id;
   return (dispatch) => {
     dispatch({ type: "SETTING_USER_INFO" });
-    fetch(`${BASE_URL}/users`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
