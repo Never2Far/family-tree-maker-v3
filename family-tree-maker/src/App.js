@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
 import {
   BrowserRouter as Router,
@@ -16,11 +15,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import RelativeShowContainer from "./containers/RelativeShowContainer";
 
 const App = () => {
-  const needUserInfo = useSelector((state) => state.users.needUserInfo);
-
   const { logout } = useAuth0();
 
-  console.log(needUserInfo);
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <NavBar />
